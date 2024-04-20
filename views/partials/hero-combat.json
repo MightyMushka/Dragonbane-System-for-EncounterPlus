@@ -1,0 +1,548 @@
+{
+    "views": [{
+        "style": "title",
+        "value": "Weapons at Hand",
+        "alignment": "center"
+    },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "WEAPON",
+                "style": "textitalic",
+            },
+                {
+                    "value": "ATTACK TYPE",
+                    "style": "textitalic",
+                    "alignment": "center",
+                    "width": 115,
+                },
+                {
+                    "value": "DAMAGE",
+                    "style": "textitalic",
+                    "alignment": "center",
+                    "width": 85,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0]
+        },
+        {
+            "type": "list",
+            "attribute": "data.activeweapons",
+            "divider": true,
+            "views": [{
+                "type": "partial",
+                "value": "hero-activeweapon",
+            }]
+        },
+        {
+            "type": "grid",
+            "views": [{
+                "type": "gridRow",
+                "views": [{
+                    "value": "{{data.dmgbonusstr|default: 'N/A'}}",
+                    "type": "field",
+                    "link": "/roll/{{data.dmgbonusstr}}/Damage Bonus (STR)/damage",
+                    "style": "dmgstr",
+                    "title": "Damage Bonus (STR)",
+                    "alignment": "center",
+                },
+                    {
+                        "value": "{{data.dmgbonusagl|default: 'N/A'}}",
+                        "type": "field",
+                        "link": "/roll/{{data.dmgbonusagl}}/Damage Bonus (AGL)/damage",
+                        "style": "dmgagl",
+                        "title": "Damage Bonus (AGL)",
+                        "alignment": "center",
+                    },
+                ]
+            },
+            ]
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "type": "vStack",
+                "alignment": "leading",
+                "spacing": 6,
+                "views": [{
+                    "type": "divider",
+                    "padding": [0]
+                },
+                    {
+                        "type": "list",
+                        "attribute": "data.activearmorbodylist",
+                        "divider": true,
+                        "views": [{
+                            "type": "partial",
+                            "value": "hero-activearmorbody",
+                        }]
+                    },
+                ]
+            },
+                {
+                    "type": "vStack",
+                    "alignment": "trailing",
+                    "spacing": 6,
+                    "views": [{
+                        "type": "divider",
+                        "padding": [0]
+                    },
+                        {
+                            "type": "list",
+                            "attribute": "data.activearmorhelmetlist",
+                            "divider": true,
+                            "views": [{
+                                "type": "partial",
+                                "value": "hero-activearmorhelmet",
+                            }]
+                        },
+                    ]
+                },
+            ]
+        },
+        {
+            "style": "title",
+            "value": "Combat Skills",
+        "alignment": "center"
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "SKILL",
+                "style": "textitalic",
+            },
+                {
+                    "value": "VALUE",
+                    "style": "textitalic",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "value": "ADVANCE",
+                    "style": "textitalic",
+                    "alignment": "trailing",
+                    "width": 60,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0]
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.dazed == true %}~~**Evade (AGL)**~~{% else %}Evade (AGL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.evade|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Evade (BANE){% else %}/roll/1d20/Evade{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.evade.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.exhausted == true %}~~**Axes (STR)**~~{% else %}Axes (STR) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.axes|default: '-'}}",
+          "link": "{% if data.exhausted == true %}/roll/2d20kh/Axes (BANE){% else %}/roll/1d20/Axes{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.axes.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.dazed == true %}~~**Bows (AGL)**~~{% else %}Bows (AGL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.bows|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Bows (BANE){% else %}/roll/1d20/Bows{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.bows.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.exhausted == true %}~~**Brawling (STR)**~~{% else %}Brawling (STR) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.brawling|default: '-'}}",
+          "link": "{% if data.exhausted == true %}/roll/2d20kh/Brawling (BANE){% else %}/roll/1d20/Brawling{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.brawling.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.dazed == true %}~~**Crossbows (AGL)**~~{% else %}Crossbows (AGL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.crossbows|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Crossbows (BANE){% else %}/roll/1d20/Crossbows{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.crossbows.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.exhausted == true %}~~**Hammers (STR)**~~{% else %}Hammers (STR) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.hammers|default: '-'}}",
+          "link": "{% if data.exhausted == true %}/roll/2d20kh/Hammers (BANE){% else %}/roll/1d20/Hammers{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.hammers.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.dazed == true %}~~**Knives (AGL)**~~{% else %}Knives (AGL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.knives|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Knives (BANE){% else %}/roll/1d20/Knives{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.knives.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.dazed == true %}~~**Slings (AGL)**~~{% else %}Slings (AGL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.slings|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Slings (BANE){% else %}/roll/1d20/Slings{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.slings.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.exhausted == true %}~~**Spears (STR)**~~{% else %}Spears (STR) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.spears|default: '-'}}",
+          "link": "{% if data.exhausted == true %}/roll/2d20kh/Spears (BANE){% else %}/roll/1d20/Spears{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.spears.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.dazed == true %}~~**Staves (AGL)**~~{% else %}Staves (AGL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.staves|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Staves (BANE){% else %}/roll/1d20/Staves{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.staves.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "views": [{
+                "value": "{% if data.exhausted == true %}~~**Swords (STR)**~~{% else %}Swords (STR) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.swords|default: '-'}}",
+          "link": "{% if data.exhausted == true %}/roll/2d20kh/Swords (BANE){% else %}/roll/1d20/Swords{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.swords.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                },
+            ]
+        },
+                {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+        "style": "title",
+        "value": "Death Rolls",
+        "alignment": "center"
+        },
+        {
+            "type": "hStack",
+            "alignment": "center",
+            "spacing": 6,
+            "views": [
+                {
+                  "type": "vStack",
+                 "alignment": "center",
+                  "views": [
+                      {
+                          "style": "subtitle",
+                          "value": "Successes",
+                          "alignment": "center",
+                          "padding": [5],
+                      },
+                      {
+                      "type": "hStack",
+                     "alignment": "center",
+                      "views": [
+                          {
+                              "type": "checkbox",
+                              "attribute": "data.success.1",
+                              "alignment": "trailing",
+                          },
+                                                    {
+                              "type": "checkbox",
+                              "attribute": "data.success.2",
+                              "alignment": "center",
+                          },
+                                                    {
+                              "type": "checkbox",
+                              "attribute": "data.success.3",
+                              "alignment": "leading",
+                          },
+                          ]
+                        }
+                      ]
+                },
+                                {
+            "type": "divider",
+            "padding": [0],
+            "alignment": "center",
+            "width": 40,
+        },
+                                {
+                  "type": "vStack",
+                  "alignment": "center",
+                  "views": [
+                      {
+                          "style": "subtitle",
+                          "value": "Failures",
+                          "alignment": "center",
+                          "padding": [5],
+                      },
+                      {
+                      "type": "hStack",
+                      "alignment": "center",
+                      "views": [
+                          {
+                              "type": "checkbox",
+                              "attribute": "data.failure.1",
+                              "alignment": "trailing",
+                          },
+                                                    {
+                              "type": "checkbox",
+                              "attribute": "data.failure.2",
+                              "alignment": "center",
+                          },
+                                                    {
+                              "type": "checkbox",
+                              "attribute": "data.failure.3",
+                              "alignment": "leading",
+                          },
+                          ]
+                        }
+                      ]
+                },
+            ]
+        },
+    ]
+}

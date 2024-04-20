@@ -1,0 +1,60 @@
+{
+  "views": [
+    {
+      "type": "hStack",
+      "alignment": "center",
+      "spacing": 6,
+      "views": [
+        {
+          "type": "vStack",
+          "link": "{{reference}}",
+          "views": [
+            {
+              "value": "{{name}}",
+              "style": "cards"
+            },
+            {
+              "value": "{{definition.data.spellschool}}{{definition.data.castingtime|prefix: ' • '}}{{definition.data.duration|prefix: ' • '}}{{definition.data.range|format|suffix: ' meters'|prefix: ' • '}}{{definition.data.rangetype|prefix: ' ('|suffix: ')'}}",
+              "style": "textitalic"
+            }
+          ]
+        },
+        {
+              "value": "{% if definition.data.magictrick == true %}Magic Trick{% else %}{% endif %}",
+              "style": "textitalic",
+              "alignment": "center",
+              "width": 80,
+        },
+        {
+          "type": "checkbox",
+          "attribute": "prepared",
+          "hiddenIf": "{% if definition.data.magictrick == true %}true{% else %}{% endif %}",
+          "width": 45,
+          "alignment": "center",
+          "custom": {
+            "checkboxStyle": {
+              "default": {
+                "icon": "text.book.closed"
+              },
+              "checked": {
+                "icon": "text.book.closed.fill"
+              }
+            }
+          }
+        },
+        {
+          "type": "button",
+          "title": "CAST",
+          "width": 45,
+          "alignment": "center",
+          "action": {
+            "event": {
+              "type": "castSpell",
+              "spell": "{{name}}"
+            }
+          }
+        }
+      ]
+    },
+  ]
+}

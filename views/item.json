@@ -1,0 +1,122 @@
+{
+  "debug": false,
+  "spacing": 2,
+  "padding": [
+    20,
+    20,
+    20,
+    20
+  ],
+  "footer": true,
+  "images": true,
+  "views": [
+    {
+      "value": "{{name}}",
+      "style": "title",
+      "width": 0,
+    },
+    {
+      "value": "**{{data.type}}** ({{data.supply}})",
+      "type": "text",
+      "style": "textitalic"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "value": "**{{'Item.Cost'|l}}:** {{data.cost}}",
+      "type": "text",
+      "style": "body",
+    },
+    {
+     "value": "**{{'Item.Weight'|l}}:** {{data.weight}}",
+     "type": "text",
+     "style": "body"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "value": "{{data.effect}}",
+      "type": "text"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.ac %}**{{'Common.ArmorRating'|l}}:** {{data.ac}}{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.sneakbane %}Bane on **Sneaking**{% endif %}"
+    },
+        {
+      "type": "text",
+      "value": "{% if data.evadebane %}Bane on **Evade**{% endif %}"
+    },
+        {
+      "type": "text",
+      "value": "{% if data.acrobaticsbane %}Bane on **Acrobatics**{% endif %}"
+    },
+        {
+      "type": "text",
+      "value": "{% if data.awarenessbane %}Bane on **Awareness**{% endif %}"
+    },
+        {
+      "type": "text",
+      "value": "{% if data.rangedbane %}Bane on **all ranged attacks**{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.weaponskill %}**{{'Common.WeaponSkill'|l}}:** {{data.weaponskill}}{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.hands %}**{{'Item.Hands'|l}}:** {{data.hands}}H{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.strengthreq %}**{{'Item.StrengthReq'|l}}:** {{data.strengthreq}}{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.range %}**{{'Item.Range'|l}}:** {{data.range}}{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.damage %}**{{'Item.Damage'|l}}:** {{data.damage}}{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.durability %}**{{'Item.Durability'|l}}:** {{data.durability}}{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.features %}**{{'Item.Features'|l}}:** {{data.features|join: ', '}}{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{% if data.capacity %}**{{'Item.ContainerCapacity'|l}}:** {{data.capacity}}{% endif %}"
+    },
+    {
+      "type": "text",
+      "value": "{{descr}}"
+    },
+    {
+      "type": "text",
+      "title": "Common.Notes",
+      "value": "{{notes}}"
+    },
+    {
+      "type": "image",
+      "value": "{{image}}",
+      "link": "{{image}}"
+    },
+    {
+      "type": "text",
+      "value": "{{footer}}"
+    }, 
+    {
+      "type": "tags",
+      "attribute": "tags"
+    }
+  ]
+}

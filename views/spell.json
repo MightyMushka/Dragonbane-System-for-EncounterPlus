@@ -1,0 +1,58 @@
+{
+  "debug": false,
+  "spacing": 2,
+  "padding": [
+    20,
+    20,
+    20,
+    20
+  ],
+  "footer": true,
+  "images": true,
+  "views": [
+    {
+      "value": "{{name}}",
+      "style": "title",
+      "width": 0
+    },
+    {
+      "value": "{% if data.magictrick == true %}{{data.spellschool}} School of Magic - Magic Trick{% else %}{{data.spellschool}} School of Magic{% endif %}",
+      "type": "text",
+      "style": "textitalic"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": "**{{'Spell.Rank'|l}}**: {{data.rank|default: 'N/A'}}"
+    },
+    {
+      "type": "text",
+      "value": "**{{'Spell.Prerequisite'|l}}**: {{data.prerequisite|default: 'N/A'}}"
+    },
+    {
+      "type": "text",
+      "value": "**{{'Spell.Requirement'|l}}**: {{data.requirement|join: ', '|default: 'N/A'}}"
+    },
+    {
+      "type": "text",
+      "value": "**{{'Spell.CastingTime'|l}}**: {{data.castingtime|default: 'N/A'}}"
+    },
+    {
+      "type": "text",
+      "value": "**{{'Spell.Range'|l}}**: {{data.range|suffix: ' meters'|default: 'N/A'}} {{data.rangetype|prefix: '('|suffix: ')'}}",
+    },
+    {
+      "type": "text",
+      "value": "**{{'Spell.Duration'|l}}**: {{data.duration|default: 'N/A'}}"
+    },
+        {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": "{{descr}}"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+    "title": "Ability",
+    "sections": [
+        {
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Ability.Type",
+                    "type": "picker",
+                    "attribute": "data.abilitytype",
+                    "attributeType": "AbilityType"
+                }
+            ]
+        },        
+        {
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Ability.Requirement",
+                    "type": "text",
+                    "attribute": "data.requirement",
+                    "placeholder": "-"
+                },
+                {
+                    "title": "Ability.WPCost",
+                    "type": "number",
+                    "attribute": "data.wpcost",
+                    "placeholder": "-"
+                }
+            ]
+        }
+    ]
+}

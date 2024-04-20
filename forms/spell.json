@@ -1,0 +1,61 @@
+{
+  "title": "Spell",
+  "sections": [
+    {
+      "title": "Common.Attributes",
+      "type": "group",
+      "fields": [
+        {
+          "title": "common.SpellSchool",
+          "type": "picker",
+          "attribute": "data.spellschool",
+          "attributeType": "SpellSchool"
+        },
+        {
+          "type": "toggle",
+          "title": "Spell.MagicTrick",
+          "attribute": "data.magictrick",
+        },
+        {
+          "title": "Spell.Rank",
+          "type": "number",
+          "attribute": "data.rank"
+        }, 
+        {
+          "title": "Spell.Prerequisite",
+          "type": "text",
+          "attribute": "data.prerequisite"
+        },
+        {
+          "title": "Spell.Requirement",
+          "type": "multiPicker",
+          "attribute": "data.requirement",
+          "attributeType": "SpellRequirement"
+        },
+        {
+          "title": "Spell.CastingTime",
+          "type": "picker",
+          "attribute": "data.castingtime",
+          "attributeType": "SpellCastingTime"
+        },
+        {
+          "title": "Spell.Range",
+          "type": "number",
+          "attribute": "data.range"
+        },
+        {
+          "title": "Spell.RangeType",
+          "type": "picker",
+          "attribute": "data.rangetype",
+          "attributeType": "RangeType"
+        },
+        {
+          "title": "Spell.Duration",
+          "type": "picker",
+          "attribute": "data.duration",
+          "attributeType": "SpellDuration"
+        }
+      ]
+    }
+  ]
+}

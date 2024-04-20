@@ -1,0 +1,346 @@
+{
+  "title": "Monster",
+  "sections": [
+    {
+      "type": "group",
+      "fields": [
+        {
+          "title": "Common.MonsterType",
+          "type": "picker",
+          "attribute": "data.monstertype",
+          "attributeType": "MonsterType"
+        },
+        {
+          "title": "Monster.IsMonster",
+          "type": "toggle",
+          "attribute": "data.monster"
+        }
+      ]
+    },
+    {
+      "title": "Basic Traits",
+      "fields": [
+        {
+          "title": "Monster.Ferocity",
+          "placeholder": "-",
+          "attribute": "data.ferocity",
+          "type": "number"
+        },
+        {
+          "title": "Monster.Size",
+          "type": "picker",
+          "attribute": "data.size",
+          "attributeType": "Size"
+        },
+        {
+          "title": "Monster.Movement",
+          "placeholder": "-",
+          "attribute": "data.movement",
+          "type": "number"
+        },
+        {
+          "title": "Common.Armor",
+          "placeholder": "-",
+          "attribute": "data.ac",
+          "type": "number"
+        },
+        {
+          "title": "Current HP",
+          "placeholder": "-",
+          "attribute": "data.hpCurrent",
+          "type": "number"
+        },
+        {
+          "title": "Common.Health",
+          "placeholder": "-",
+          "attribute": "data.hpMaximum",
+          "type": "number"
+        },
+                {
+          "title": "Current WP",
+          "placeholder": "-",
+          "attribute": "data.wpCurrent",
+          "type": "number"
+        },
+        {
+          "title": "Current WP",
+          "placeholder": "-",
+          "attribute": "data.wpCurrent",
+          "type": "number"
+        },
+        {
+          "title": "Common.Willpower",
+          "placeholder": "-",
+          "attribute": "data.wpMaximum",
+          "type": "number"
+        },
+        {
+          "title": "Monster.DamageBonus",
+          "placeholder": "-",
+          "attribute": "data.damagebonus",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "Monster Attacks",
+      "visibleIf": "{% if data.monster == true %}true{% endif %}",
+      "fields": [
+        {
+          "title": "Attack #1 Name",
+          "attribute": "data.ma1name",
+          "type": "text"
+        },
+        {
+          "placeholder": "Description",
+          "attribute": "data.ma1desc",
+          "type": "textArea"
+        },
+        {
+          "title": "Attack #2 Name",
+          "attribute": "data.ma2name",
+          "type": "text"
+        },
+        {
+          "placeholder": "Description",
+          "attribute": "data.ma2desc",
+          "type": "textArea"
+			},
+			        {
+          "title": "Attack #3 Name",
+          "attribute": "data.ma3name",
+          "type": "text"
+        },
+        {
+          "placeholder": "Description",
+          "attribute": "data.ma3desc",
+          "type": "textArea"
+        },
+        {
+          "title": "Attack #4 Name",
+          "attribute": "data.ma4name",
+          "type": "text"
+        },
+        {
+          "placeholder": "Description",
+          "attribute": "data.ma4desc",
+          "type": "textArea"
+			},
+			        {
+          "title": "Attack #5 Name",
+          "attribute": "data.ma5name",
+          "type": "text"
+        },
+        {
+          "placeholder": "Description",
+          "attribute": "data.ma5desc",
+          "type": "textArea"
+        },
+        {
+          "title": "Attack #6 Name",
+          "attribute": "data.ma6name",
+          "type": "text"
+        },
+        {
+          "placeholder": "Description",
+          "attribute": "data.ma6desc",
+          "type": "textArea"
+			}
+      ]
+    },
+    {
+      "title": "Non-Monster Details",
+      "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+      "fields": [
+        {
+          "title": "General Skills",
+          "hiddenIf": "{% if data.monster == true %}true{% endif %}",          
+          "attribute": "data.generalskills",
+          "type": "textArea"
+        },
+                {
+          "title": "Weapon Skills",
+          "hiddenIf": "{% if data.monster == true %}true{% endif %}",          
+          "attribute": "data.weaponskills",
+          "type": "textArea"
+        } 
+      ]
+    },
+    {
+      "title": "Armor",
+      "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+      "type": "list",
+      "attribute": "data.armor",
+      "attributeType": "Item",
+            "custom": {
+        "map": {
+          "ac": "data.ac"
+        }
+      },
+      "form": {
+        "title": "Armor",
+        "sections": [
+          {
+            "type": "group",
+            "fields": [
+              {
+                "placeholder": "Common.Name",
+                "attribute": "name"
+              },
+              {
+                "placeholder": "Common.Description",
+                "type": "textArea",
+                "attribute": "descr"
+              }
+            ]
+          },
+          {
+            "title": "Common.Reference",
+            "type": "group",
+            "fields": [
+              {
+                "title": "Common.Reference",
+                "type": "reference",
+                "attribute": "reference",
+                "attributeType": "Item"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Weapons",
+      "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+      "type": "list",
+      "attribute": "data.weapons",
+      "attributeType": "Item",
+                  "custom": {
+        "map": {
+          "weaponskill": "data.weaponskill",
+          "range": "data.range",
+          "damage": "data.damage"
+        }
+      },
+      "form": {
+        "title": "Character.Item",
+        "sections": [
+          {
+            "type": "group",
+            "fields": [
+              {
+                "placeholder": "Common.Name",
+                "attribute": "name"
+              },
+              {
+                "placeholder": "Common.Description",
+                "type": "textArea",
+                "attribute": "descr"
+              }
+            ]
+          },
+          {
+            "title": "Common.Reference",
+            "type": "group",
+            "fields": [
+              {
+                "title": "Common.Reference",
+                "type": "reference",
+                "attribute": "reference",
+                "attributeType": "Item"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Spells",
+      "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+      "type": "list",
+      "attribute": "data.spells",
+      "attributeType": "Spell",
+      "custom": {
+        "map": {
+          "SpellSchool": "data.spellschool"
+        }
+      },
+      "form": {
+        "title": "Character.Spell",
+        "sections": [
+          {
+            "type": "group",
+            "fields": [
+              {
+                "placeholder": "Common.Name",
+                "attribute": "name"
+              },
+              {
+                "placeholder": "Common.Description",
+                "type": "textArea",
+                "attribute": "descr"
+              }
+            ]
+          },
+          {
+            "title": "Common.Reference",
+            "type": "group",
+            "fields": [
+              {
+                "title": "Common.Reference",
+                "type": "reference",
+                "attribute": "reference",
+                "attributeType": "Spell"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Notes and Description",
+      "fields": [
+        {
+          "title": "Combat Note #1",
+          "attribute": "data.combatnote1",
+          "type": "text"
+        },
+        {
+          "placeholder": "Combat Note Description #1",
+          "attribute": "data.combatnotedesc1",
+          "type": "textArea"
+        },
+        {
+          "title": "Combat Note #2",
+          "attribute": "data.combatnote2",
+          "type": "text"
+        },        
+        {
+          "placeholder": "Combat Note Description #2",
+          "attribute": "data.combatnotedesc2",
+          "type": "textArea"
+        },
+        {
+          "placeholder": "Decription of Monster",
+          "attribute": "data.monsterdesc",
+          "type": "textArea"
+        }
+      ]
+    },
+    {
+      "title": "Random Encounter/Adventure Info",
+      "fields": [
+        {
+          "placeholder": "Random Encounter Description",
+          "attribute": "data.randomencounter",
+          "type": "textArea"
+        },
+        {
+          "placeholder": "Adventure Seed Description",
+          "attribute": "data.adventureseed",
+          "type": "textArea"
+        }
+      ]
+    }
+  ]
+}

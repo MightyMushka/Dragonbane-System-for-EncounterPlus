@@ -1,0 +1,64 @@
+{
+    "debug": false,
+    "spacing": 2,
+    "padding": [
+        20,
+        20,
+        20,
+        20
+    ],
+    "footer": true,
+    "images": true,
+    "views": [{
+        "value": "{{name}}",
+        "style": "title",
+        "width": 0,
+    },
+        {
+            "type": "divider"
+        },
+        {
+            "value": "**Core Attribute:** {{data.attribute}}",
+            "type": "text"
+        },
+        {
+            "value": "**Profession Skills (Core):** {{data.coreskills|join: ', '|default: 'N/A'}}",
+            "type": "text",
+            "style": "body"
+        },
+        {
+            "value": "**Profession Skills (Weapon):** {{data.weaponskills|join: ', '|default: 'N/A'}}",
+            "type": "text",
+            "style": "body"
+        },
+        {
+            "value": "**Profession Abilities:** {{data.professionability|join: ', '}}",
+            "type": "text",
+            "style": "body"
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "text",
+            "value": "{{descr}}"
+        },
+        {
+            "type": "text",
+            "title": "Common.Notes",
+            "value": "{{notes}}"
+        },
+        {
+            "type": "image",
+            "value": "{{image}}",
+            "link": "{{image}}"
+        },
+        {
+            "type": "text",
+            "value": "{{footer}}"
+        },
+        {
+            "type": "tags",
+            "attribute": "tags"
+        }]
+}

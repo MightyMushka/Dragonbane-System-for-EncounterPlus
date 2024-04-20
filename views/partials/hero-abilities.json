@@ -1,0 +1,40 @@
+{
+  "views": [
+        {
+      "style": "title",
+      "value": "Heroic Ability",
+    },
+    {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "ABILITY",
+          "style": "textitalic",
+        },
+        {
+          "value": "ACTIVATE",
+          "style": "textitalic",
+          "alignment": "center",
+          "width": 85,
+        },
+      ]
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "list",
+      "attribute": "data.ability",
+      "divider": true,
+      "views": [
+        {
+          "type": "partial",
+          "value": "hero-activeability",
+        }      
+      ]
+    },
+  ]
+}

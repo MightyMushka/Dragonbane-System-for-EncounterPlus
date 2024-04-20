@@ -1,0 +1,244 @@
+{
+    "views": [
+        {
+      "style": "title",
+      "value": "Heroic Abilities",
+      "alignment": "center",
+    },
+    {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 2,
+      "views": [
+        {
+          "value": "ABILITY",
+          "style": "textitalic",
+        },
+        {
+          "value": "ACTIVATE",
+          "style": "textitalic",
+          "alignment": "trailing",
+          "width": 60,
+        },
+      ]
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+    {
+      "type": "list",
+      "attribute": "data.ability",
+      "divider": true,
+      "views": [
+        {
+          "type": "partial",
+          "value": "hero-activeability",
+        }      
+      ]
+    },    
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+        {
+        "style": "title",
+        "value": "{% if data.skill.animism > 0 or data.skill.mentalism > 0 or data.skill.elementalism > 0 or data.skill.generalmagic > 0 %}Magic Skills{% else %}{% endif %}",
+      "alignment": "center",
+    },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "visibleIf": "{% if data.skill.animism > 0 or data.skill.mentalism > 0 or data.skill.elementalism > 0 or data.skill.generalmagic > 0 %}true{% endif %}",
+            "views": [{
+                "value": "SKILL",
+                "style": "textitalic",
+            },
+                {
+                    "value": "VALUE",
+                    "style": "textitalic",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "value": "ADVANCE",
+                    "style": "textitalic",
+                    "alignment": "trailing",
+                    "width": 60,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+            "visibleIf": "{% if data.skill.animism > 0 or data.skill.mentalism > 0 or data.skill.elementalism > 0 or data.skill.generalmagic > 0 %}true{% endif %}",
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "visibleIf": "{% if data.skill.generalmagic > 0 %}true{% endif %}",
+            "views": [{
+                "value": "{% if data.scared == true %}~~**General Magic (WIL)**~~{% else %}General Magic (WIL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.generalmagic}}",
+                    "link": "{% if data.scared == true %}/roll/2d20kh/General Magic (BANE){% else %}/roll/1d20/General Magic{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.generalmagic.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                }]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+            "visibleIf": "{% if data.skill.generalmagic > 0 %}true{% endif %}",
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "visibleIf": "{% if data.skill.animism > 0 %}true{% endif %}",
+            "views": [{
+                "value": "{% if data.scared == true %}~~**Animism Magic (WIL)**~~{% else %}Animism Magic (WIL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.animism}}",
+                    "link": "{% if data.scared == true %}/roll/2d20kh/Animism Magic (BANE){% else %}/roll/1d20/Animism Magic{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.animism.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                }]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+            "visibleIf": "{% if data.skill.animism > 0 %}true{% endif %}",
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "visibleIf": "{% if data.skill.mentalism > 0 %}true{% endif %}",
+            "views": [{
+                "value": "{% if data.scared == true %}~~**Mentalism Magic (WIL)**~~{% else %}Mentalism Magic (WIL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.mentalism}}",
+                    "link": "{% if data.scared == true %}/roll/2d20kh/Mentalism Magic (BANE){% else %}/roll/1d20/Mentalism Magic{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.mentalism.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                }]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+            "visibleIf": "{% if data.skill.mentalism > 0 %}true{% endif %}",
+        },
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 6,
+            "visibleIf": "{% if data.skill.elementalism > 0 %}true{% endif %}",
+            "views": [{
+                "value": "{% if data.scared == true %}~~**Elementalism Magic (WIL)**~~{% else %}Elementalism Magic (WIL) {% endif %}",
+                "style": "body",
+                "type": "text",
+            },
+                {
+                    "value": "{{data.skill.elementalism}}",
+                    "link": "{% if data.scared == true %}/roll/2d20kh/Elementalism Magic (BANE){% else %}/roll/1d20/Elementalism Magic{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+                    "width": 44,
+                },
+                {
+                    "attribute": "data.elementalism.advancement",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "width": 60,
+                    "height": 17,
+                }]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+            "visibleIf": "{% if data.skill.animism > 0 or data.skill.mentalism > 0 or data.skill.elementalism > 0 or data.skill.generalmagic > 0 %}true{% endif %}",
+        },
+
+        {
+            "style": "title",
+            "visibleIf": "{% if data.skill.animism > 0 or data.skill.mentalism > 0 or data.skill.elementalism > 0 or data.skill.generalmagic > 0 %}true{% endif %}",
+            "value": "Grimoire",
+      "alignment": "center",
+        },
+        {
+            "type": "list",
+            "attribute": "data.spellbook",
+            "views": [{
+                "type": "hStack",
+                "alignment": "leading",
+                "spacing": 2,
+                "views": [{
+                    "value": "SPELL",
+                    "style": "textitalic",
+                },
+                    {
+                        "value": "PREP",
+                        "style": "textitalic",
+                        "alignment": "center",
+                        "width": 50,
+                    },
+                    {
+                        "value": "ACTION",
+                        "style": "textitalic",
+                        "alignment": "center",
+                        "width": 60,
+                    },
+                ]
+            },
+                {
+                    "type": "divider",
+                    "padding": [0],
+                },
+                {
+                    "type": "list",
+                    "attribute": "spells",
+                    "divider": true,
+                    "views": [{
+                        "type": "partial",
+                        "value": "hero-spell",
+                    }]
+                }]
+        },
+    ]
+}

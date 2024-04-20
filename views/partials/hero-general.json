@@ -1,0 +1,636 @@
+{
+  "views": [
+    {
+      "style": "title",
+      "value": "Primary Skills",
+        "alignment": "center"
+    },
+    {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "SKILL",
+          "style": "textitalic",
+        },
+        {
+          "value": "VALUE",
+          "style": "textitalic",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "value": "ADVANCE",
+          "style": "textitalic",
+          "alignment": "trailing",
+          "width": 60,
+        },
+      ]
+    },
+    {
+      "type": "divider",
+      "padding": [0]
+    },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.dazed == true %}~~**Acrobatics (AGL)**~~{% else %}Acrobatics (AGL) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.acrobatics|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Acrobatics (BANE){% else %}/roll/1d20/Acrobatics{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.acrobatics.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.angry == true %}~~**Awareness (INT)**~~{% else %}Awareness (INT) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.awareness|default: '-'}}",
+          "link": "{% if data.angry == true %}/roll/2d20kh/Awareness (BANE){% else %}/roll/1d20/Awareness{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.awareness.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.disheartened == true %}~~**Bartering (CHA)**~~{% else %}Bartering (CHA) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.bartering|default: '-'}}",
+          "link": "{% if data.disheartened == true %}/roll/2d20kh/Bartering (BANE){% else %}/roll/1d20/Bartering{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.bartering.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.angry == true %}~~**Beast Lore (INT)**~~{% else %}Beast Lore (INT) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.beastlore|default: '-'}}",
+          "link": "{% if data.angry == true %}/roll/2d20kh/Beast Lore (BANE){% else %}/roll/1d20/Beast Lore{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.beastlore.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.disheartened == true %}~~**Bluffing (CHA)**~~{% else %}Bluffing (CHA) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.bluffing|default: '-'}}",
+          "link": "{% if data.disheartened == true %}/roll/2d20kh/Bluffing (BANE){% else %}/roll/1d20/Bluffing{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.bluffing.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.angry == true %}~~**Bushcraft (INT)**~~{% else %}Bushcraft (INT) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.bushcraft|default: '-'}}",
+          "link": "{% if data.angry == true %}/roll/2d20kh/Bushcraft (BANE){% else %}/roll/1d20/Bushcraft{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.bushcraft.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.exhausted == true %}~~**Crafting (STR)**~~{% else %}Crafting (STR) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.crafting|default: '-'}}",
+          "link": "{% if data.exhausted == true %}/roll/2d20kh/Crafting (BANE){% else %}/roll/1d20/Crafting{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.crafting.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.dazed == true %}~~**Evade (AGL)**~~{% else %}Evade (AGL) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.evade|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Evade (BANE){% else %}/roll/1d20/Evade{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.evade.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.angry == true %}~~**Healing (INT)**~~{% else %}Healing (INT) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.healing|default: '-'}}",
+          "link": "{% if data.angry == true %}/roll/2d20kh/Healing (BANE){% else %}/roll/1d20/Healing{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.healing.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.dazed == true %}~~**Hunting & Fishing (AGL)**~~{% else %}Hunting & Fishing (AGL) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.huntingfishing|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Hunting & Fishing (BANE){% else %}/roll/1d20/Hunting & Fishing{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.huntingfishing.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.angry == true %}~~**Languages (INT)**~~{% else %}Languages (INT) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.languages|default: '-'}}",
+          "link": "{% if data.angry == true %}/roll/2d20kh/Languages (BANE){% else %}/roll/1d20/Languages{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.languages.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.angry == true %}~~**Myths & Legends (INT)**~~{% else %}Myths & Legends (INT) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.mythslegends|default: '-'}}",
+          "link": "{% if data.angry == true %}/roll/2d20kh/Myths & Legends (BANE){% else %}/roll/1d20/Myths & Legends{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.mythslegends.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.disheartened == true %}~~**Performance (CHA)**~~{% else %}Performance (CHA) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.performance|default: '-'}}",
+          "link": "{% if data.disheartened == true %}/roll/2d20kh/Performance (BANE){% else %}/roll/1d20/Performance{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.performance.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.disheartened == true %}~~**Persuasion (CHA)**~~{% else %}Persuasion (CHA) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.persuasion|default: '-'}}",
+          "link": "{% if data.disheartened == true %}/roll/2d20kh/Persuasion (BANE){% else %}/roll/1d20/Persuasion{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.persuasion.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.dazed == true %}~~**Riding (AGL)**~~{% else %}Riding (AGL) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.riding|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Riding (BANE){% else %}/roll/1d20/Riding{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.riding.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.angry == true %}~~**Seamanship (INT)**~~{% else %}Seamanship (INT) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.seamanship|default: '-'}}",
+          "link": "{% if data.angry == true %}/roll/2d20kh/Seamanship (BANE){% else %}/roll/1d20/Seamanship{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.seamanship.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.dazed == true %}~~**Sleight of Hand (AGL)**~~{% else %}Sleight of Hand (AGL) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.sleightofhand|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Sleight of Hand (BANE){% else %}/roll/1d20/Sleight of Hand{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.sleightofhand.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.dazed == true %}~~**Sneaking (AGL)**~~{% else %}Sneaking (AGL) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.sneaking|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Sneaking (BANE){% else %}/roll/1d20/Sneaking{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.sneaking.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.angry == true %}~~**Spot Hidden (INT)**~~{% else %}Spot Hidden (INT) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.spothidden|default: '-'}}",
+          "link": "{% if data.angry == true %}/roll/2d20kh/Spot Hidden (BANE){% else %}/roll/1d20/Spot Hidden{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.spothidden.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },        
+        ]
+        },
+        {
+          "type": "divider",
+          "padding": [0],
+        },
+        {
+      "type": "hStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "value": "{% if data.dazed == true %}~~**Swimming (AGL)**~~{% else %}Swimming (AGL) {% endif %}",
+          "style": "body",
+          "type": "text",
+        },
+        {
+          "value": "{{data.skill.swimming|default: '-'}}",
+          "link": "{% if data.dazed == true %}/roll/2d20kh/Swimming (BANE){% else %}/roll/1d20/Swimming{% endif %}",
+          "style": "body-bold",
+          "alignment": "center",
+          "width": 44,
+        },
+        {
+          "attribute": "data.swimming.advancement",
+          "type": "checkbox",
+          "alignment": "center",
+          "width": 60,
+          "height": 17,
+        },
+      ]
+    },
+            {
+          "type": "divider",
+          "padding": [0],
+        },
+  ]
+}

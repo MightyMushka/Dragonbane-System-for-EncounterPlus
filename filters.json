@@ -1,0 +1,50 @@
+{
+    "Monster": {
+        "group": [{
+            "attribute": "data.monstertype",
+            "attributeType": "MonsterType",
+            "title": "Monster Type"
+        }],
+        "sort": [{
+            "attribute": "name",
+            "title": "Common.Name"
+        },
+        ],
+    },
+    "Spell": {
+        "group": [{
+            "attribute": "data.spellschool",
+            "attributeType": "SpellSchool",
+            "title": "Magic School"
+        },
+        ],
+        "sort": [{
+            "attribute": "name",
+            "title": "Common.Name"
+        },
+        ],
+    },
+    "Item": {
+        "group": [{
+            "attribute": "data.type",
+            "attributeType": "ItemType",
+            "title": "Item Type"
+        }], "sort": [{
+            "attribute": "name",
+            "title": "Common.Name"
+        },
+        ],
+    },
+    "Ability": {
+        "group": [{
+            "attribute": "data.abilitytype",
+            "attributeType": "AbilityType",
+            "title": "Ability Type"
+        }],
+        "sort": [{
+            "attribute": "name",
+            "title": "Common.Name"
+        },
+        ],
+    },
+}

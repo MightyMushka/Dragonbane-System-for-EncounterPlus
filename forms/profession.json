@@ -1,0 +1,75 @@
+{
+    "title": "Profession",
+    "sections": [
+        {
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Key Attribute",
+                    "type": "picker",
+                    "attribute": "data.attribute",
+                    "attributeType": "CoreAttribute"
+                },
+                {
+                    "title": "Profession Skills (Core)",
+                    "type": "multiPicker",
+                    "attribute": "data.coreskills",
+                    "attributeType": "CoreSkill"
+                },
+                                {
+                    "title": "Profession Skills (Weapon)",
+                    "type": "multiPicker",
+                    "attribute": "data.weaponskills",
+                    "attributeType": "WeaponSkill"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Profession Abilities",
+                    "type": "multiPicker",
+                    "attribute": "data.professionability",
+                    "attributeType": "Ability",
+                    "custom": {
+                        "map": {
+                            "wp": "data.wpcost"
+                        }
+                    },
+                    "form": {
+                        "title": "Ability",
+                        "sections": [
+                            {
+                                "type": "group",
+                                "fields": [
+                                    {
+                                        "placeholder": "Common.Name",
+                                        "attribute": "name"
+                                    },
+                                    {
+                                        "placeholder": "Common.Description",
+                                        "type": "textArea",
+                                        "attribute": "descr"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Common.Reference",
+                                "type": "group",
+                                "fields": [
+                                    {
+                                        "title": "Common.Reference",
+                                        "type": "reference",
+                                        "attribute": "reference",
+                                        "attributeType": "Ability"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+}
+]
+}

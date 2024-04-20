@@ -1,0 +1,64 @@
+{
+    "title": "Kin",
+    "sections": [
+        {
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Base Movement",
+                    "type": "number",
+                    "attribute": "data.movement",
+                    "units": "m"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "fields": [
+                {
+                    "title": "Kin Ability",
+                    "type": "multiPicker",
+                    "attribute": "data.kinability",
+                    "attributeType": "Ability",
+                    "custom": {
+                        "map": {
+                            "wp": "data.wpcost",
+                            "kinabilityname": "name"
+                        }
+                    },
+                    "form": {
+                        "title": "Ability",
+                        "sections": [
+                            {
+                                "type": "group",
+                                "fields": [
+                                    {
+                                        "placeholder": "Common.Name",
+                                        "attribute": "name"
+                                    },
+                                    {
+                                        "placeholder": "Common.Description",
+                                        "type": "textArea",
+                                        "attribute": "descr"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Common.Reference",
+                                "type": "group",
+                                "fields": [
+                                    {
+                                        "title": "Common.Reference",
+                                        "type": "reference",
+                                        "attribute": "reference",
+                                        "attributeType": "Ability"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+}
+]
+}

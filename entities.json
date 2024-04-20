@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Hero",
+    "label": "hero",
+    "collection": {
+      "label": "heroes"
+    },
+    "loadable": true,
+    "role": "friendly"
+  },
+  {
+    "name": "Monster",
+    "label": "monster",
+    "collection": {
+      "label": "monsters"
+    },
+    "loadable": true,
+    "role": "hostile"
+  },
+  {
+    "name": "NPC",
+    "label": "npc",
+    "collection": {
+      "label": "npcs"
+    },
+    "loadable": true,
+    "role": "neutral"
+  },
+  {
+    "name": "Spell",
+    "label": "spell",
+    "collection": {
+      "label": "spells"
+    },
+  },
+  {
+    "name": "Item",
+    "label": "item",
+    "collection": {
+      "label": "items"
+    },
+  },
+  {
+    "name": "Kin",
+    "label": "kin",
+    "collection": {
+      "label": "kin"
+    }
+  },
+  {
+    "name": "Profession",
+    "label": "profession",
+    "collection": {
+      "label": "professions"
+    }
+  },
+  {
+      "name": "Ability",
+      "label": "ability",
+      "collection": {
+          "label": "abilities"
+      },
+  },
+  {
+    "name": "Table",
+    "label": "table",
+    "collection": {
+      "label": "tables"
+    },
+    "native": true
+  }
+]

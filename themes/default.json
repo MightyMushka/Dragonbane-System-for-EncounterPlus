@@ -1,0 +1,309 @@
+
+{
+  "tintColor": "#58180D",
+  "primaryColor": "#9C2B1B",
+  "textColor": "#000000",
+  "dividerColor": "#000000",
+  "bgColor": "#f5f5f5",
+  "bgImage": "/images/paper.png",
+  "fieldStyles": {
+      "default": {
+          "borderColor": "#296857",
+          "layout": "top",
+          "borderWidth": 2,
+          "cornerRadius": 5,
+          "padding": [5],
+          "title": {
+              "font": "Dragonlands",
+              "size": 15,
+              "alignment": "center",
+              "bgColor": "#296857",
+              "bgColor": "#ffffff",
+              "color": "#ffffff",
+              "padding": [0],
+          },
+          "body": {
+              "font": "Dragonlands",
+              "size": 15,
+              "alignment": "center",
+          },
+      },
+      "hp": {
+          "borderColor": "#296857",
+          "titleWidth": 50,
+          "layout": "leading",
+          "spacing": 0,
+          "alignment": "center",
+          "borderWidth": 2,
+          "cornerRadius": 5,
+          "padding": [2],
+          "title": {
+              "font": "Dragonlands",
+              "size": 20,
+              "alignment": "center",
+              "bgColor": "#296857",
+              "color": "#ffffff",
+              "padding": [8],
+          },
+          "body": {
+              "font": "Dragonlands",
+              "size": 20,
+              "alignment": "center",
+          },
+      },
+      "dmgstr": {
+          "borderColor": "#296857",
+          "titleWidth": 50,
+          "layout": "top",
+          "spacing": 0,
+          "alignment": "center",
+          "borderWidth": 2,
+          "cornerRadius": 5,
+          "padding": [2],
+          "title": {
+              "font": "Dragonlands",
+              "size": 15,
+              "alignment": "center",
+              "bgColor": "#296857",
+              "color": "#ffffff",
+              "padding": [2],
+          },
+          "body": {
+              "font": "Dragonlands",
+              "size": 20,
+              "alignment": "center",
+              "padding": [5],
+          },
+      },
+            "other": {
+          "borderColor": "#296857",
+          "titleWidth": 50,
+          "layout": "top",
+          "spacing": 0,
+          "alignment": "center",
+          "borderWidth": 2,
+          "cornerRadius": 5,
+          "padding": [2],
+          "title": {
+              "font": "Dragonlands",
+              "size": 15,
+              "alignment": "center",
+              "bgColor": "#296857",
+              "color": "#ffffff",
+              "padding": [2],
+          },
+          "body": {
+              "font": "QTFrizQuad-Bold",
+              "size": 15,
+              "alignment": "center",
+              "padding": [5],
+          },
+      },
+      "dmgagl": {
+          "borderColor": "#296857",
+          "titleWidth": 50,
+          "layout": "top",
+          "spacing": 0,
+          "alignment": "center",
+          "borderWidth": 2,
+          "cornerRadius": 5,
+          "padding": [2],
+          "title": {
+              "font": "Dragonlands",
+              "size": 15,
+              "alignment": "center",
+              "bgColor": "#296857",
+              "color": "#ffffff",
+              "padding": [2],
+          },
+          "body": {
+              "font": "Dragonlands",
+              "size": 20,
+              "padding": [5],
+              "alignment": "center",
+          },
+      },
+      "wp": {
+          "borderColor": "#296857",
+          "titleWidth": 50,
+          "layout": "leading",
+          "spacing": 0,
+          "alignment": "center",
+          "borderWidth": 2,
+          "cornerRadius": 5,
+          "padding": [2],
+          "title": {
+              "font": "Dragonlands",
+              "size": 20,
+              "alignment": "center",
+              "bgColor": "#296857",
+              "color": "#ffffff",
+              "padding": [8],
+          },
+          "body": {
+              "font": "Dragonlands",
+              "size": 20,
+              "alignment": "center",
+          },
+      },
+  },
+  "buttonStyles": {
+      "default": {
+          "color": "#296857",
+          "borderWidth": 2,
+          "cornerRadius": 5,
+          "body": {
+              "font": "QTFrizQuad-Bold",
+              "size": 15,
+              "alignment": "center",
+              "padding": [7],
+          }
+            },
+        "hidden": {
+          "color": "#FFFFFFFF",
+          "body": {
+              "font": "QTFrizQuad-Bold",
+              "size": 15,
+              "color": "#FFFFFFFF",
+              "alignment": "center",
+              "padding": [7],
+          }
+            },
+        "prominent": {
+            "color": "#296857",
+            "cornerRadius": 5,
+            "bgColor": "#00000022",
+          "body": {
+              "font": "QTFrizQuad-Bold",
+              "size": 15,
+              "alignment": "center",
+              "padding": [7],
+          }
+                },
+  },
+  "checkboxStyles": {
+      "default": {
+          "tintColor": "#296857",
+          "icon": "diamond"
+            },
+        "checked": {
+            "primaryColor": "#296857",
+            "tintColor": "#296857",
+            "icon": "diamond.inset.filled",
+                }
+  },
+  "textStyles": {
+    "body": {
+      "font": "QTFrizQuad",
+      "size": 15
+    },
+    "body-smol": {
+      "font": "QTFrizQuad",
+      "size": 13
+    },
+    "character-attribute": {
+      "font": "Caveat-Bold",
+      "alignment": "center",
+      "size": 25
+    },
+    "body-bold": {
+      "font": "QTFrizQuad-Bold",
+      "size": 15
+    },
+    "monstertext": {
+      "font": "NotoSans",
+      "size": 15
+    },
+    "monsterdesc": {
+      "font": "QTFrizQuad",
+      "size": 15
+    },
+    "title": {
+      "font": "Dragonlands",
+      "color": "#296857",
+      "caps": true,
+      "size": 20
+    },
+    "stats": {
+      "font": "Dragonlands",
+      "caps": true,
+      "size": 20
+    },
+    "section": {
+      "font": "Dragonlands",
+      "color": "#296857",
+      "caps": true,
+      "size": 20
+    },
+    "subtitle": {
+      "font": "Dragonlands",
+      "caps": true,
+      "size": 20
+    },
+        "cards": {
+      "font": "Dragonlands",
+      "size": 15
+    },
+    "subtitle-small": {
+      "font": "Dragonlands",
+      "caps": true,
+      "size": 15
+    },
+    "textitalic": {
+      "font": "Merriweather-BoldItalic",
+      "size": 12
+    },
+    "monsterquoteperson": {
+      "font": "QTFrizQuad",
+      "size": 20
+    },
+    "heading": {
+      "font": "HoeflerText-Regular",
+      "color": "#58180D",
+      "caps": true
+    },
+    "heading1": {
+      "font": "HoeflerText-Regular",
+      "color": "#58180D",
+      "caps": true,
+      "size": 28
+    },
+    "heading2": {
+      "font": "HoeflerText-Regular",
+      "color": "#58180D",
+      "caps": true,
+      "size": 25,
+      "divider": true
+    },
+    "heading3": {
+      "font": "HoeflerText-Regular",
+      "color": "#58180D",
+      "caps": true,
+      "size": 22
+    },
+    "heading4": {
+      "font": "HoeflerText-Regular",
+      "color": "#58180D",
+      "caps": true,
+      "size": 20
+    },
+    "heading5": {
+      "font": "HoeflerText-Regular",
+      "color": "#58180D",
+      "size": 18
+    },
+    "heading6": {
+      "font": "HoeflerText-Regular",
+      "color": "#58180D",
+      "size": 16
+    },
+    "footer": {
+      "font": "Baramond-Italic",
+      "size": 18
+    },
+    "icons": {
+      "font": "Baramond",
+      "size": 50
+    }
+  }
+}

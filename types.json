@@ -1,0 +1,154 @@
+{
+  "CoreAttribute": {
+    "STR": "CoreAttribute.Strength",
+    "AGL": "CoreAttribute.Agility",
+    "CON": "CoreAttribute.Constitution",
+    "INT": "CoreAttribute.Intelligence",
+    "WIL": "CoreAttribute.Willpower",
+    "CHA": "CoreAttribute.Charisma"
+  },
+   "AbilityType": {
+    "Kin": "AbilityType.Kin",
+    "Heroic": "AbilityType.Heroic",
+  },
+    "Age": {
+    "Young": "Age.Young",
+    "Adult": "Age.Adult",
+    "Old": "Age.Old"
+  },
+    "Size": {
+    "Small": "Size.Small",
+    "Normal": "Size.Normal",
+    "Large": "Size.Large",
+    "Huge": "Size.Huge",
+    "Swarm": "Size.Swarm"
+  },
+  "CoreSkill": {
+    "Acrobatics": "CoreSkill.Acrobatics",
+    "Awareness": "CoreSkill.Awareness",
+    "Bartering": "CoreSkill.Bartering",
+    "Beast Lore": "CoreSkill.BeastLore",
+    "Bluffing": "CoreSkill.Bluffing",
+    "Bushcraft": "CoreSkill.Bushcraft",
+    "Crafting": "CoreSkill.Crafting",
+    "Evade": "CoreSkill.Evade",
+    "Healing": "CoreSkill.Healing",
+    "Hunting & Fishing": "CoreSkill.HuntingFishing",
+    "Languages": "CoreSkill.Languages",
+    "Myths & Legends": "CoreSkill.MythsLegends",
+    "Performance": "CoreSkill.Performance",
+    "Persuasion": "CoreSkill.Persuasion",
+    "Riding": "CoreSkill.Riding",
+    "Seamanship": "CoreSkill.Seamanship",
+    "Sleight of Hand": "CoreSkill.SleightOfHand",
+    "Sneaking": "CoreSkill.Sneaking",
+    "Spot Hidden": "CoreSkill.SpotHidden",
+    "Swimming": "CoreSkill.Swimming"
+  },
+  "WeaponSkill": {
+    "Axes": "WeaponSkill.Axes",
+    "Bows": "WeaponSkill.Bows",
+    "Brawling": "WeaponSkill.Brawling",
+    "Crossbows": "WeaponSkill.Crossbows",
+    "Hammers": "WeaponSkill.Hammers",
+    "Knives": "WeaponSkill.Knives",
+    "Slings": "WeaponSkill.Slings",
+    "Spears": "WeaponSkill.Spears",
+    "Staves": "WeaponSkill.Staves",
+    "Swords": "WeaponSkill.Swords"
+  },  
+  "ItemType": {
+    "Armor": "ItemType.Armor",
+    "Melee Weapon": "ItemType.MeleeWeapon",
+    "Ranged Weapon": "ItemType.RangedWeapon",
+    "Clothes": "ItemType.Clothes",
+    "Musical Instrument": "ItemType.MusicalInstrument",
+    "Trade Good": "ItemType.TradeGood",
+    "Studies": "ItemType.Studies",
+    "Light Source": "ItemType.LightSource",
+    "Tool": "ItemType.Tool",
+    "Container": "ItemType.Container",
+    "Medicine": "ItemType.Medicine",
+    "Service": "ItemType.Service",
+    "Hunting & Fishing": "ItemType.HuntingFishing",
+    "Travel": "ItemType.Travel",
+    "Animal": "ItemType.Animal"
+  },  
+  "MonsterType": {
+    "Nightkin": "MonsterType.Nightkin",
+    "Rare Kin": "MonsterType.RareKin",
+    "Insectoids": "MonsterType.Insectoids",
+    "Trolls": "MonsterType.Trolls",
+    "Giants": "MonsterType.Giants",
+    "Beasts": "MonsterType.Beasts",
+    "Undead": "MonsterType.Undead",
+    "Dragons": "MonsterType.Dragons",
+    "Demons": "MonsterType.Demons"
+  },
+  "Supply": {
+    "Common": "Supply.Common",
+    "Uncommon": "Supply.Uncommon",
+    "Rare": "Supply.Rare",
+    "Unique": "Supply.Unique"
+  },
+  "ArmorEffect": {
+    "Bane on all **Sneak** rolls": "ArmorEffect.SneakBane",
+    "Bane on all **Evade** rolls": "ArmorEffect.EvadeBane",
+    "Bane on all **Acrobatics** rolls": "ArmorEffect.AcrobaticsBane",
+    "Bane on all **Awareness** rolls": "ArmorEffect.AwarenessBane",
+    "Bane on all ranged attacks": "ArmorEffect.RangedBane"
+  },
+  "WeaponFeature": {
+    "Subtle": "WeaponFeature.Subtle",
+    "Long": "WeaponFeature.Long",
+    "Toppling": "WeaponFeature.Toppling",
+    "Piercing": "WeaponFeature.Piercing",
+    "Slashing": "WeaponFeature.Slashing",
+    "Bludgeoning": "WeaponFeature.Bludgeoning"
+  },
+  "SpellSchool": {
+    "General": "SpellSchool.General",
+    "Animism": "SpellSchool.Animism",
+    "Elementalism": "SpellSchool.Elementalism",
+    "Mentalism": "SpellSchool.Mentalism"
+  },
+  "SpellCastingTime": {
+    "Action": "SpellCastingTime.Action",
+    "Reaction": "SpellCastingTime.Reaction",
+    "Shift": "SpellCastingTime.Shift",
+    "Stretch": "SpellCastingTime.Stretch"
+  },
+  "SpellRequirement": {
+    "Word": "SpellRequirement.Word",
+    "Gesture": "SpellRequirement.Gesture",
+    "Focus": "SpellRequirement.Focus",
+    "Ingredient": "SpellRequirement.Ingredient"
+  },
+    "RangeType": {
+    "AoE": "RangeType.AoE",
+    "Sphere": "RangeType.Sphere",
+    "Cone": "RangeType.Cone",
+  },
+  "SpellDuration": {
+    "Instant": "SpellDuration.Instant",
+    "Round": "SpellDuration.Round",
+    "Stretch": "SpellDuration.Stretch",
+    "Shift": "SpellDuration.Shift",
+    "Soncentration": "SpellDuration.Concentration"
+  },
+  "CharacterSection": {
+    "abilities": "Abilities",
+    "items": "Items",
+    "spells": "Spells",
+    "other": "Other"
+  },
+  "CharacterSectionIcon": {
+    "abilities": "flag.fill",
+    "skills": "person.fill",
+    "actions": "figure.archery",
+    "spells": "bolt.fill",
+    "items": "archivebox.fill",
+    "features": "list.bullet",
+    "other": "note.text"
+  }
+}

@@ -1,0 +1,474 @@
+{
+    "title": "Character",
+    // tabbed form
+    "tabs": [
+        // MAIN
+        {
+            "title": "Main",
+            "icon": "person",
+            "sections": [{
+                "title": "Kin",
+                "type": "group",
+                "fields": [{
+                    "type": "picker",
+                    "attribute": "data.kin",
+                    "attributeType": "Kin",
+                    "form": {
+                        "title": "Kin",
+                        "partial": "hero-kin"
+                    }
+                },
+                ]
+            },
+                {
+                    "type": "group",
+                    "fields": [{
+                        "title": "Kin Movement (m)",
+                        "placeholder": "0",
+                        "type": "number",
+                        "attribute": "data.kinmovement"
+                    }]
+                },
+                {
+                    "title": "Profession",
+                    "type": "group",
+                    "fields": [{
+                        "type": "picker",
+                        "attribute": "data.profession",
+                        "attributeType": "Profession",
+                        "form": {
+                            "title": "Profession",
+                            "partial": "hero-profession"
+                        }
+                    },
+                    ]
+                },
+                {
+                    "title": "Age",
+                    "type": "group",
+                    "fields": [{
+                        "title": "Age",
+                        "type": "picker",
+                        "attribute": "data.age",
+                        "attributeType": "Age",
+                    },
+                    ]
+                },
+                {
+                    "title": "Nickname",
+                    "type": "group",
+                    "fields": [{
+                        "type": "text",
+                        "attribute": "data.nickname",
+                    },
+                    ]
+                },
+                {
+                    "title": "Weakness",
+                    "type": "group",
+                    "fields": [{
+                        "type": "text",
+                        "attribute": "data.weakness",
+                    },
+                    ]
+                },
+                {
+                    "title": "Appearance",
+                    "type": "group",
+                    "fields": [{
+                        "type": "text",
+                        "attribute": "data.appearance",
+                    },
+                    ]
+                },
+                {
+                    "title": "Hit Points",
+                    "type": "group",
+                    "fields": [{
+                        "title": "Current HP",
+                        "type": "number",
+                        "attribute": "data.hpCurrent"
+                    },
+                        {
+                            "title": "Maximum HP",
+                            "type": "number",
+                            "attribute": "data.hpMaximum"
+                        }]
+                },
+                {
+                    "title": "Willpower Points",
+                    "type": "group",
+                    "fields": [{
+                        "title": "Current WP",
+                        "type": "number",
+                        "attribute": "data.wpCurrent"
+                    },
+                        {
+                            "title": "Maximum WP",
+                            "type": "number",
+                            "attribute": "data.wpMaximum"
+                        }]
+                },
+            ]
+        },
+        // ATTRIBUTES, SKILLS
+        {
+            "title": "Attributes & Skills",
+            "icon": "flag.fill",
+            "sections": [{
+                "title": "Attributes",
+                "type": "group",
+                "fields": [{
+                    "title": "Strength (STR)",
+                    "type": "number",
+                    "attribute": "data.str",
+                },
+                    {
+                        "title": "Constitution (CON)",
+                        "type": "number",
+                        "attribute": "data.con",
+                    },
+                    {
+                        "title": "Agility (AGL)",
+                        "type": "number",
+                        "attribute": "data.agl",
+                    },
+                    {
+                        "title": "Intelligence (INT)",
+                        "type": "number",
+                        "attribute": "data.int",
+                    },
+                    {
+                        "title": "Willpower (WIL)",
+                        "type": "number",
+                        "attribute": "data.wil",
+                    },
+                    {
+                        "title": "Charisma (CHA)",
+                        "type": "number",
+                        "attribute": "data.cha",
+                    },
+                ]
+            },
+                {
+                    "title": "Core Skills",
+                    "type": "group",
+                    "fields": [{
+                        "title": "Acrobatics (AGL)",
+                        "type": "number",
+                        "attribute": "data.skill.acrobatics",
+                    },
+                        {
+                            "title": "Awareness (INT)",
+                            "type": "number",
+                            "attribute": "data.skill.awareness",
+                        },
+                        {
+                            "title": "Bartering (CHA)",
+                            "type": "number",
+                            "attribute": "data.skill.bartering",
+                        },
+                        {
+                            "title": "Beast Lore (INT)",
+                            "type": "number",
+                            "attribute": "data.skill.beastlore",
+                        },
+                        {
+                            "title": "Bluffing (CHA)",
+                            "type": "number",
+                            "attribute": "data.skill.bluffing",
+                        },
+                        {
+                            "title": "Bushcraft (INT)",
+                            "type": "number",
+                            "attribute": "data.skill.bushcraft",
+                        },
+                        {
+                            "title": "Crafting (STR)",
+                            "type": "number",
+                            "attribute": "data.skill.crafting",
+                        },
+                        {
+                            "title": "Evade (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.evade",
+                        },
+                        {
+                            "title": "Healing (INT)",
+                            "type": "number",
+                            "attribute": "data.skill.healing",
+                        },
+                        {
+                            "title": "Hunting & Fishing (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.huntingfishing",
+                        },
+                        {
+                            "title": "Languages (INT)",
+                            "type": "number",
+                            "attribute": "data.skill.languages",
+                        },
+                        {
+                            "title": "Myths & Legends (INT)",
+                            "type": "number",
+                            "attribute": "data.skill.mythslegends",
+                        },
+                        {
+                            "title": "Performance (CHA)",
+                            "type": "number",
+                            "attribute": "data.skill.performance",
+                        },
+                        {
+                            "title": "Persuasion (CHA)",
+                            "type": "number",
+                            "attribute": "data.skill.persuasion",
+                        },
+                        {
+                            "title": "Riding (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.riding",
+                        },
+                        {
+                            "title": "Seamanship (INT)",
+                            "type": "number",
+                            "attribute": "data.skill.seamanship",
+                        },
+                        {
+                            "title": "Sleight of Hand (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.sleightofhand",
+                        },
+                        {
+                            "title": "Sneaking (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.sneaking",
+                        },
+                        {
+                            "title": "Spot Hidden (INT)",
+                            "type": "number",
+                            "attribute": "data.skill.spothidden",
+                        },
+                        {
+                            "title": "Swimming (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.swimming",
+                        },
+                    ]
+                },
+                {
+                    "title": "Weapon Skills",
+                    "type": "group",
+                    "fields": [{
+                        "title": "Axes (STR)",
+                        "type": "number",
+                        "attribute": "data.skill.axes",
+                    },
+                        {
+                            "title": "Bows (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.bows",
+                        },
+                        {
+                            "title": "Brawling (STR)",
+                            "type": "number",
+                            "attribute": "data.skill.brawling",
+                        },
+                        {
+                            "title": "Crossbows (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.crossbows",
+                        },
+                        {
+                            "title": "Hammers (STR)",
+                            "type": "number",
+                            "attribute": "data.skill.hammers",
+                        },
+                        {
+                            "title": "Knives (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.knives",
+                        },
+                        {
+                            "title": "Slings (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.slings",
+                        },
+                        {
+                            "title": "Spears (STR)",
+                            "type": "number",
+                            "attribute": "data.skill.spears",
+                        },
+                        {
+                            "title": "Staves (AGL)",
+                            "type": "number",
+                            "attribute": "data.skill.staves",
+                        },
+                        {
+                            "title": "Swords (STR)",
+                            "type": "number",
+                            "attribute": "data.skill.swords",
+                        },
+                    ]
+                }]
+        },
+        // ABILITIES
+        {
+            "title": "Abilities",
+            "sections": [{
+                "title": "Abilities",
+                "type": "list",
+                "attribute": "data.ability",
+                "attributeType": "Ability",
+                "custom": {
+                    "map": {
+                        "wpcost": "data.wpcost",
+                        "abilitytype": "data.abilitytype",
+                    }
+                },
+                "form": {
+                    "title": "Heroic Ability",
+                    "sections": [{
+                        "type": "group",
+                        "fields": [{
+                            "placeholder": "Common.Name",
+                            "attribute": "name"
+                        },
+                            {
+                                "placeholder": "Common.Description",
+                                "type": "textArea",
+                                "attribute": "descr"
+                            }]
+                    },
+                        {
+                            "title": "Common.Reference",
+                            "type": "group",
+                            "fields": [{
+                                "title": "Common.Reference",
+                                "type": "reference",
+                                "attribute": "reference",
+                                "attributeType": "Item"
+                            }]
+                        }]
+                }
+            },
+            ]
+        },
+        // INVENTORY
+        {
+            "title": "Inventory",
+            "icon": "archivebox",
+            "sections": [{
+                "type": "group",
+                "title": "Currency Total: {% eval %} ({{data.currency.cp|default: 0}} / 100) + ({{data.currency.sp|default: 0}} / 10) + {{data.currency.gp|default: 0}} {% endeval %} gold",
+                "fields": [{
+                    "type": "hStack",
+                    "fields": [{
+                        "title": "Copper",
+                        "placeholder": "—",
+                        "type": "number",
+                        "alignment": "top",
+                        "attribute": "data.currency.cp",
+                    },
+                        {
+                            "title": "Silver",
+                            "placeholder": "—",
+                            "type": "number",
+                            "alignment": "top",
+                            "attribute": "data.currency.sp",
+                        },
+                        {
+                            "title": "Gold",
+                            "placeholder": "—",
+                            "type": "number",
+                            "alignment": "top",
+                            "attribute": "data.currency.gp",
+                        },
+                    ]
+                },
+
+                ]
+            },
+                {
+                    "title": "Memento",
+                    "type": "group",
+                    "fields": [{
+                        "type": "text",
+                        "attribute": "data.memento",
+                    },
+                    ]
+                },
+                {
+                    "title": "Items",
+                    "type": "list",
+                    "attribute": "data.items",
+                    "attributeType": "Item",
+                    "custom": {
+                        "map": {
+                            "ac": "data.ac",
+                            "weaponskill": "data.weaponskill",
+                            "range": "data.range",
+                            "damage": "data.damage",
+                            "sneakbane": "data.sneakbane",
+                            "evadebane": "data.evadebane",
+                            "acrobaticsbane": "data.acrobaticsbane",
+                            "awarenessbane": "data.awarenessbane",
+                            "rangedbane": "data.rangedbane"
+
+                        },
+                        "transform": "tree",
+                        "itemDetail": "{{definition.detail}}",
+                    },
+                    "form": {
+                        "title": "Item",
+                        "partial": "hero-item"
+                    }
+                },
+            ]
+        },
+        // SPELLS
+        {
+            "title": "Spells",
+            "icon": "bolt",
+            "sections": [{
+                "title": "Attributes",
+                "type": "group",
+                "fields": [{
+                    "title": "General Magic",
+                    "type": "number",
+                    "attribute": "data.skill.generalmagic",
+                },
+                    {
+                        "title": "Animism Magic",
+                        "type": "number",
+                        "attribute": "data.skill.animism",
+                    },
+                    {
+                        "title": "Mentalism Magic",
+                        "type": "number",
+                        "attribute": "data.skill.mentalism",
+                    },
+                    {
+                        "title": "Elementalism Magic",
+                        "type": "number",
+                        "attribute": "data.skill.elementalism",
+                    }]
+            },
+                {
+                    "title": "Spells",
+                    "type": "list",
+                    "attribute": "data.spells",
+                    "attributeType": "Spell",
+                    "custom": {
+                        "map": {
+                            "level": "data.level"
+                        },
+                        "itemDetail": "{{definition.detail}}"
+                    },
+                    "form": {
+                        "title": "Spell",
+                        "partial": "hero-spell"
+                    }
+                }]
+        },
+    ]
+}

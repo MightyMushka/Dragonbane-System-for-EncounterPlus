@@ -1,0 +1,42 @@
+{
+    "views": [{
+        "type": "checkbox",
+        "attribute": "equipped",
+        "width": 36,
+        "alignment": "center"
+    },
+        {
+            "type": "hStack",
+            "alignment": "center",
+            "link": "{{reference}}",
+            "views": [{
+                "type": "image",
+                "value": "{{definition.imagePath}}",
+                "imageResizeMode": "aspectFill",
+                "cornerRadius": 6,
+                "width": 34,
+                "height": 34,
+            },
+                {
+                    "type": "vStack",
+                    "spacing": 0,
+                    "views": [{
+                        "value": "**{{name}}**",
+                        "style": "cards"
+                    },
+                        {
+                            "value": "{{definition.data.type}} ({{definition.data.supply}})",
+                            "style": "textitalic"
+                        }]
+                },
+            ]
+        },
+        {
+            "value": "{% if equipped == true %}~~{{definition.data.weight}}~~{% else %}{{definition.data.weight}}{% endif %}",
+            "style": "body-Bold",
+            "alignment": "center",
+            "padding": [0],
+            "width": 50
+        },
+    ],
+}

@@ -1,0 +1,155 @@
+{
+    "views": [
+        {
+            "type": "hStack",
+            "alignment": "center",
+            "spacing": 0,
+            "views": [{
+                "type": "checkbox",
+                "attribute": "data.usememento",
+                "width": 36,
+                "alignment": "center"
+            },
+                {
+                    "type": "hStack",
+                    "alignment": "center",
+                    "views": [{
+                        "type": "vStack",
+                        "spacing": 0,
+                        "views": [{
+                            "value": "{% if data.usememento == true %}Memento (Used this session){% else %}Memento{% endif %}",
+                            "style": "cards"
+                        },
+                            {
+                                "value": "{{data.memento|default: 'None'}}",
+                                "style": "textitalic"
+                            }]
+                    },
+                    ]
+                },
+            ]
+        },
+                {
+            "type": "divider",
+            "padding": [0]
+        },
+                    {
+            "type": "hStack",
+            "alignment": "center",
+            "spacing": 0,
+            "views": [{
+                "type": "checkbox",
+                "attribute": "data.backpackequipped",
+                "width": 36,
+                "alignment": "center"
+            },
+                {
+                    "type": "hStack",
+                    "alignment": "center",
+                    "views": [{
+                        "type": "vStack",
+                        "spacing": 0,
+                        "views": [{
+                            "value": "Backpack",
+                            "style": "cards"
+                        },
+                                                    {
+                                "value": "{% if data.backpackequipped == true %}Equipped{% else %}Not Equipped{% endif %}",
+                                "style": "textitalic"
+                            }
+                    ]
+                },
+            ]
+        },
+        ]
+        },
+                {
+            "type": "divider",
+            "padding": [0]
+        },
+                {
+            "style": "title",
+            "value": "Equipment",
+            "alignment": "center",
+        },
+                {
+        "type": "hStack",
+        "views": [
+            {
+                "value": "Coins: ~ {{data.currency.total|default: 0'}} gold",
+                "alignment": "leading",
+                "style": "body-bold"
+            },
+                        {
+            "value": "Max Weight: {{data.carryweight|default: '0'}}",
+            "style": "body-bold",
+            "alignment": "trailing"
+        },
+            ]
+                },    
+        {
+            "type": "hStack",
+            "alignment": "leading",
+            "spacing": 2,
+            "views": [{
+                "type": "spacer",
+                "width": 35,
+            },
+                {
+                    "value": "ITEM",
+                    "style": "textitalic",
+                },
+                {
+                    "value": "WEIGHT",
+                    "style": "textitalic",
+                    "alignment": "center",
+                    "width": 50,
+                },
+            ]
+        },
+        {
+            "type": "divider",
+            "padding": [0],
+        },
+        {
+            "type": "list",
+            "attribute": "data.items.standard",
+            "divider": true,
+            "views": [{
+                "type": "hStack",
+                "alignment": "center",
+                "spacing": 0,
+                "views": [{
+                    "type": "partial",
+                    "value": "hero-item"
+                }]
+            }]
+        },
+        {
+            "type": "list",
+            "attribute": "data.items.container",
+            "divider": true,
+            "views": [{
+                "type": "disclosureGroup",
+                "title": "{{name}} {{items.count|brackets}}",
+                "value": "{{weight|default: 0|units: 'lb'}}",
+                "style": "heading2",
+                "views": [{
+                    "type": "list",
+                    "attribute": "items",
+                    "divider": true,
+                    "views": [{
+                        "type": "hStack",
+                        "alignment": "center",
+                        "spacing": 0,
+                        "views": [{
+                            "type": "partial",
+                            "value": "hero-item"
+                        }]
+                    }]
+                },
+                ]
+            },
+            ]
+        }]
+}

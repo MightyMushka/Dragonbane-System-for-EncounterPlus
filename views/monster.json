@@ -1,0 +1,196 @@
+{
+    "debug": false,
+    "spacing": 2,
+    "padding": [
+        20,
+        20,
+        20,
+        20
+    ],
+    "footer": true,
+    "images": true,
+    "views": [{
+        "value": "{{name}}",
+        "style": "title",
+        "width": 0,
+    },
+        {
+            "value": "{{data.monstertype}}",
+            "type": "text",
+            "style": "textitalic"
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "hStack",
+            "views": [{
+                "type": "vStack",
+                "views": [{
+                    "type": "text",
+                    "value": "**{{'Monster.Ferocity'|l}}**: {{data.ferocity|default: '-'}}"
+                },
+                    {
+                        "type": "text",
+                        "value": "**{{'Monster.Size'|l}}**: {{data.size|default: '-'}}"
+                    },
+                    {
+                        "type": "text",
+                        "value": "**{{'Monster.Movement'|l}} (m)**: {{data.movement|default: '-'}}"
+                    }]
+            },
+                {
+                    "type": "vStack",
+                    "views": [{
+                        "type": "text",
+                        "value": "**{{'Common.Armor'|l}}**: {{data.ac|default: '-'}}"
+                    },
+                        {
+                            "type": "text",
+                            "value": "**{{'Common.Health'|l}}**: {{data.hpMaximum|default: '-'}}"
+                        },
+                        {
+                            "type": "text",
+                            "value": "**{{'Common.Willpower'|l}}**: {{data.wpMaximum|default: '-'}}"
+                        }]
+                }]
+        },
+        {
+            "type": "text",
+            "visibleIf": "{{data.damagebonus}}",
+            "value": "**{{'Monster.DamageBonus'|l}}:** {{data.damagebonus}}"
+        },
+        {
+            "type": "text",
+            "visibleIf": "{{data.combatnote1}}",
+            "value": "**{{data.combatnote1}}:** {{data.combatnotedesc1}}"
+        },
+        {
+            "type": "text",
+            "visibleIf": "{{data.combatnote2}}",
+            "value": "**{{data.combatnote2}}:** {{data.combatnotedesc2}}"
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "text",
+            "visibleIf": "{% if data.monster == true %}true{% endif %}",
+            "value": "Monster Attacks",
+            "style": "section"
+        },
+        {
+            "type": "text",
+            "visibleIf": "{% if data.monster == true %}true{% endif %}",
+            "value": "|**d6**|**Attack** |\n|----|------------|\n| **1** | **{{data.ma1name}}** {{data.ma1desc}} |\n| **2** | **{{data.ma2name}}** {{data.ma2desc}} |\n| **3** | **{{data.ma3name}}** {{data.ma3desc}} |\n| **4** | **{{data.ma4name}}** {{data.ma4desc}} |\n| **5** | **{{data.ma5name}}** {{data.ma5desc}} |\n| **6** | **{{data.ma6name}}** {{data.ma6desc}} |"
+        },
+        {
+            "type": "text",
+            "value": "NPC Skills",
+            "style": "section",
+            "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+        },
+        {
+            "type": "text",
+            "value": "**General:** {{data.generalskills|suffix: ', **all others** 5'}}",
+            "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+        },
+        {
+            "type": "text",
+            "value": "**Weapon:** {{data.weaponskills|suffix: ', **all others** 5'}}",
+            "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+        },
+        {
+            "type": "list",
+            "attribute": "data.weapons",
+            "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+            "title": "Weapons",
+            "style": "section",
+            "views": [{
+                "type": "vStack",
+                "link": "{{reference}}",
+                "views": [{
+                    "value": ">**{{name}}**, **Range:** {{range}}, **Damage:** {{damage}}",
+                    "type": "text"
+                }]
+            }]
+        },
+        {
+            "type": "list",
+            "attribute": "data.armor",
+            "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+            "title": "Armor",
+            "style": "section",
+            "views": [{
+                "type": "vStack",
+                "link": "{{reference}}",
+                "views": [{
+                    "value": ">**{{name}}**, **Armor:** {{ac}}",
+                    "type": "text"
+                }]
+            }]
+        },
+                        {
+                        "type": "zStack",
+                        "visibleIf": "{% if data.wpMaximum > 0 %}true{% endif %}",
+                        "views": [{
+                            "value": "{{data.wpCurrent|default: '0'}} / {{data.wpMaximum|default: '0'}}",
+                            "type": "field",
+                            "style": "wp",
+                            "title": "WP",
+                            "alignment": "center",
+                        },
+                            {
+                                "type": "menuButton",
+                                "value": "-",
+                                "style": "hidden",
+                                "alignment": "trailing",
+                                "views": [{
+                                    "type": "button",
+                                    "title": "Increase WP (1)",
+                                    "action": {
+                                        "set": {
+                                            "data.wpCurrent": "@data.wpCurrent++"
+                                        }
+                                    }
+                                },
+                                    {
+                                        "type": "divider",
+                                    },
+                                    {
+                                        "type": "button",
+                                        "title": "Decrease WP (1)",
+                                        "action": {
+                                            "set": {
+                                                "data.wpCurrent": "@data.wpCurrent--"
+                                            }
+                                        }
+                                    },
+                                ]
+                            },
+                        ]
+                    },
+        {
+            "type": "list",
+            "attribute": "data.spells",
+            "hiddenIf": "{% if data.monster == true %}true{% endif %}",
+            "title": "Spells",
+            "style": "section",
+            "views": [{
+                "type": "vStack",
+                "link": "{{reference}}",
+                "views": [{
+                    "value": ">**{{name}}:**\n{{descr}}",
+                    "type": "text"
+                }]
+            }]
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "image",
+            "value": "{{image}}",
+            "link": "{{image}}"
+        }]
+}

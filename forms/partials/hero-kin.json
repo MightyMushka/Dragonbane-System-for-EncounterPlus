@@ -1,0 +1,73 @@
+{
+  "sections": [
+    {
+      "type": "group",
+      "fields": [
+        {
+          "placeholder": "Name",
+          "attribute": "name"
+        },
+        {
+                    "title": "Base Movement",
+                    "type": "number",
+                    "attribute": "data.movement",
+                    "units": "m"
+                }
+            ]
+        },
+                {
+                    "title": "Kin Ability",
+                    "type": "list",
+                    "attribute": "data.kinability",
+                    "attributeType": "Ability",
+                    "custom": {
+                        "map": {
+                            "wp": "data.wpcost"
+                        }
+                    },
+                    "form": {
+                        "title": "Ability",
+                        "sections": [
+                            {
+                                "type": "group",
+                                "fields": [
+                                    {
+                                        "placeholder": "Common.Name",
+                                        "attribute": "name"
+                                    },
+                                    {
+                                        "placeholder": "Common.Description",
+                                        "type": "textArea",
+                                        "attribute": "descr"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Common.Reference",
+                                "type": "group",
+                                "fields": [
+                                    {
+                                        "title": "Common.Reference",
+                                        "type": "reference",
+                                        "attribute": "reference",
+                                        "attributeType": "Ability"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+    {
+      "type": "group",
+      "title": "Reference",
+      "fields": [
+        {
+          "title": "Reference",
+          "type": "reference",
+          "attribute": "reference",
+          "attributeType": "Kin"
+        },
+      ]
+    },
+  ]
+}

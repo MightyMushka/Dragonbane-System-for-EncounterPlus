@@ -1,0 +1,782 @@
+{
+    "debug": false,
+    "spacing": 8,
+    "padding": [
+        16
+    ],
+    "layout": "lazy",
+    "views": [{
+        "type": "hStack",
+        "spacing": 12,
+        "alignment": "center",
+        "views": [{
+            "type": "image",
+            "value": "{{image}}",
+            "width": 68.0,
+            "height": 68.0,
+            "alignment": "top",
+            "imageResizeMode": "aspectFill",
+            "link": "{{image}}",
+            "borderWidth": 2,
+            "borderColor": "#296857",
+        },
+            {
+                "type": "vStack",
+                "spacing": 0,
+                "views": [{
+                    "style": "title",
+                    "value": "{{name}}",
+                },
+                                        {
+                        "style": "textitalic",
+                        "value": "{{data.kin}} {{data.profession}} {{data.age|prefix: ' - '}}",
+                        "type": "text",
+                    },
+                ]
+            },
+            // rest button with custom action
+            {
+                "type": "button",
+                "alignment": "center",
+                "width": 24,
+                "height": 24,
+                "padding":[8],
+                "custom": {
+                    "icon": "moon.zzz.fill",
+                },
+                "action": {
+                    "set": {
+                        "data.hpCurrent": "@data.hpMaximum",
+                        "data.wpCurrent": "@data.wpMaximum",
+                        "data.roundrest": false,
+                        "data.stretchrest": false,
+                    }
+                }
+            }]
+    },
+        {
+            "type": "grid",
+            "views": [{
+                "type": "gridRow",
+                "views": [{
+                    "value": "{{data.hpCurrent|default: '0' }} / {{data.hpMaximum|default: '0'}}",
+                    "type": "field",
+                    "style": "hp",
+                    "title": "HP",
+                    "link": "/health/",
+                    "alignment": "center",
+                },
+                    {
+                        "type": "zStack",
+                        "views": [{
+                            "value": "{{data.wpCurrent|default: '0'}} / {{data.wpMaximum|default: '0'}}",
+                            "type": "field",
+                            "style": "wp",
+                            "title": "WP",
+                            "alignment": "center",
+                        },
+                            {
+                                "type": "menuButton",
+                                "value": "-",
+                                "style": "hidden",
+                                "alignment": "trailing",
+                                "views": [{
+                                    "type": "button",
+                                    "title": "Increase WP (1)",
+                                    "action": {
+                                        "set": {
+                                            "data.wpCurrent": "@data.wpCurrent++"
+                                        }
+                                    }
+                                },
+                                    {
+                                        "type": "divider",
+                                    },
+                                    {
+                                        "type": "button",
+                                        "title": "Decrease WP (1)",
+                                        "action": {
+                                            "set": {
+                                                "data.wpCurrent": "@data.wpCurrent--"
+                                            }
+                                        }
+                                    },
+                                ]
+                            },
+                        ]
+                    },
+                ]
+            },
+            ]
+        },
+        {
+            "type": "grid",
+            "views": [{
+                "type": "gridRow",
+                "views": [{
+                    "value": "{{data.ac}}",
+                    "type": "field",
+                    "style": "dmgstr",
+                    "title": "Armor",
+                    "alignment": "center",
+                },
+                    {
+                        "value": "{{data.movement|default: '0'|suffix: ' M'}}",
+                        "type": "field",
+                        "style": "dmgagl",
+                        "title": "Movement",
+                        "alignment": "center",
+                    },
+                ]
+            },
+            ]
+        },
+                {
+            "type": "grid",
+            "views": [{
+                "type": "gridRow",
+                "views": [{
+                    "value": "{% if data.roundrest == true %}~~Round Rest~~{% else %}Round Rest{% endif %}",
+                    "style": "body-bold",
+                    "alignment": "center",
+
+                },
+                    {
+                    "value": "{% if data.stretchrest == true %}~~Stretch Rest~~{% else %}Stretch Rest{% endif %}",
+                        "style": "body-bold",
+                        "alignment": "center",
+
+                    },
+                ]
+            },
+            ]
+        },
+        {
+            "type": "grid",
+            "views": [{
+                "type": "gridRow",
+                "views": [{
+                    "attribute": "data.roundrest",
+                    "type": "checkbox",
+                    "alignment": "center",
+                    "padding": [-8],
+                },
+                    {
+                        "attribute": "data.stretchrest",
+                        "type": "checkbox",
+                        "alignment": "center",
+                        "padding": [-8],
+                    },
+                ]
+            },
+            ]
+        },
+        {
+            "type": "divider",
+        },
+        {
+            "type": "hStack",
+            "alignment": "center",
+            "spacing": 8,
+            "views": [{
+                "type": "zStack",
+                "frame": {
+                    "minWidth": 100,
+                    "maxWidth": 100,
+                    "minHeight": 60,
+                    "maxHeight": 110
+                },
+                "views": [{
+                    "type": "vStack",
+                    "spacing": 0,
+                    "views": [{
+                        "type": "spacer",
+                        "borderWidth": 2,
+                        "borderColor": "#296857",
+                        "cornerRadius": 8,
+                        "padding": [0, 8, 0, 0],
+                    },
+                        {
+                            "type": "spacer",
+                            "height": 8
+                        },
+                    ]
+                },
+                    {
+                        "type": "vStack",
+                        "spacing": 4,
+                        "padding": [8, 0, 0, 0],
+                        "alignment": "center",
+                        "views": [{
+                            "style": "subtitle",
+                            "value": "STR",
+                            "alignment": "center",
+                            "padding": [-5],
+                        },
+                            {
+                                "value": "{{data.str|default: '0'}}",
+                                "style": "subtitle",
+                                "alignment": "center",
+                            },
+                            {
+                                "style": "textitalic",
+                                "value": "Exhausted",
+                                "alignment": "center",
+                                "padding": [4],
+                                "frame": {
+                                    "maxWidth": 80,
+                                },
+                                "borderWidth": 2,
+                                "borderColor": "#296857",
+                                "cornerRadius": 8,
+                                "bgColor": "#ededed"
+                            },
+                        ]
+                    },
+                ],
+            },
+                {
+                    "type": "zStack",
+                    "frame": {
+                        "minWidth": 100,
+                        "maxWidth": 100,
+                        "minHeight": 60,
+                        "maxHeight": 110
+                    },
+                    "views": [{
+                        "type": "vStack",
+                        "spacing": 0,
+                        "views": [{
+                            "type": "spacer",
+                            "borderWidth": 2,
+                            "borderColor": "#296857",
+                            "cornerRadius": 8,
+                            "padding": [0, 8, 0, 0],
+                        },
+                            {
+                                "type": "spacer",
+                                "height": 8
+                            },
+                        ]
+                    },
+                        {
+                            "type": "vStack",
+                            "spacing": 4,
+                            "padding": [8, 0, 0, 0],
+                            "alignment": "center",
+                            "views": [{
+                                "style": "subtitle",
+                                "value": "CON",
+                                "alignment": "center",
+                                "padding": [-5],
+                            },
+                                {
+                                    "value": "{{data.con|default: '0'}}",
+                                    "style": "subtitle",
+                                    "alignment": "center",
+                                },
+                                {
+                                    "style": "textitalic",
+                                    "value": "Sickly",
+                                    "alignment": "center",
+                                    "padding": [4],
+                                    "frame": {
+                                        "maxWidth": 80,
+                                    },
+                                    "borderWidth": 2,
+                                    "borderColor": "#296857",
+                                    "cornerRadius": 8,
+                                    "bgColor": "#ededed"
+                                },
+                            ]
+                        },
+                    ],
+                },
+                {
+                    "type": "zStack",
+                    "frame": {
+                        "minWidth": 100,
+                        "maxWidth": 100,
+                        "minHeight": 60,
+                        "maxHeight": 110
+                    },
+                    "views": [{
+                        "type": "vStack",
+                        "spacing": 0,
+                        "views": [{
+                            "type": "spacer",
+                            "borderWidth": 2,
+                            "borderColor": "#296857",
+                            "cornerRadius": 8,
+                            "padding": [0, 8, 0, 0],
+                        },
+                            {
+                                "type": "spacer",
+                                "height": 8
+                            },
+                        ]
+                    },
+                        {
+                            "type": "vStack",
+                            "spacing": 4,
+                            "padding": [8, 0, 0, 0],
+                            "alignment": "center",
+                            "views": [{
+                                "style": "subtitle",
+                                "value": "AGL",
+                                "alignment": "center",
+                                "padding": [-5],
+                            },
+                                {
+                                    "value": "{{data.agl|default: '0'}}",
+                                    "style": "subtitle",
+                                    "alignment": "center",
+                                },
+                                {
+                                    "style": "textitalic",
+                                    "value": "Dazed",
+                                    "alignment": "center",
+                                    "padding": [4],
+                                    "frame": {
+                                        "maxWidth": 80,
+                                    },
+                                    "borderWidth": 2,
+                                    "borderColor": "#296857",
+                                    "cornerRadius": 8,
+                                    "bgColor": "#ededed"
+                                },
+                            ]
+                        },
+                    ],
+                },
+            ]
+        },
+        {
+            "type": "hStack",
+            "padding": [-9,0,0],
+            "alignment": "top",
+            "spacing": 8,
+            "views": [{
+                "type": "zStack",
+                "alignment": "top",
+                "frame": {
+                    "minWidth": 100,
+                    "maxWidth": 100,
+                    "minHeight": 30,
+                    "maxHeight": 30
+                },
+                "views": [{
+                    "type": "checkbox",
+                    "attribute": "data.exhausted",
+                    "alignment": "top"
+                }]
+            },
+                {
+                    "type": "zStack",
+                    "alignment": "top",
+                    "frame": {
+                        "minWidth": 100,
+                        "maxWidth": 100,
+                        "minHeight": 30,
+                        "maxHeight": 30
+                    },
+                    "views": [{
+                        "type": "checkbox",
+                        "attribute": "data.sickly",
+                        "alignment": "top"
+                    }]
+                },
+                {
+                    "type": "zStack",
+                    "alignment": "top",
+                    "frame": {
+                        "minWidth": 100,
+                        "maxWidth": 100,
+                        "minHeight": 30,
+                        "maxHeight": 30
+                    },
+                    "views": [{
+                        "type": "checkbox",
+                        "attribute": "data.dazed",
+                        "alignment": "top"
+                    }]
+                }]
+        },
+        {
+            "type": "hStack",
+            "alignment": "center",
+            "spacing": 8,
+            "views": [{
+                "type": "zStack",
+                "frame": {
+                    "minWidth": 100,
+                    "maxWidth": 100,
+                    "minHeight": 60,
+                    "maxHeight": 110
+                },
+                "views": [{
+                    "type": "vStack",
+                    "spacing": 0,
+                    "views": [{
+                        "type": "spacer",
+                        "borderWidth": 2,
+                        "borderColor": "#296857",
+                        "cornerRadius": 8,
+                        "padding": [0, 8, 0, 0],
+                    },
+                        {
+                            "type": "spacer",
+                            "height": 8
+                        },
+                    ]
+                },
+                    {
+                        "type": "vStack",
+                        "spacing": 4,
+                        "padding": [8, 0, 0, 0],
+                        "alignment": "center",
+                        "views": [{
+                            "style": "subtitle",
+                            "value": "INT",
+                            "alignment": "center",
+                            "padding": [-5],
+                        },
+                            {
+                                "value": "{{data.int|default: '0'}}",
+                                "style": "subtitle",
+                                "alignment": "center",
+                            },
+                            {
+                                "style": "textitalic",
+                                "value": "Angry",
+                                "alignment": "center",
+                                "padding": [4],
+                                "frame": {
+                                    "maxWidth": 80,
+                                },
+                                "borderWidth": 2,
+                                "borderColor": "#296857",
+                                "cornerRadius": 8,
+                                "bgColor": "#ededed"
+                            },
+                        ]
+                    },
+                ],
+            },
+                {
+                    "type": "zStack",
+                    "frame": {
+                        "minWidth": 100,
+                        "maxWidth": 100,
+                        "minHeight": 60,
+                        "maxHeight": 110
+                    },
+                    "views": [{
+                        "type": "vStack",
+                        "spacing": 0,
+                        "views": [{
+                            "type": "spacer",
+                            "borderWidth": 2,
+                            "borderColor": "#296857",
+                            "cornerRadius": 8,
+                            "padding": [0, 8, 0, 0],
+                        },
+                            {
+                                "type": "spacer",
+                                "height": 8
+                            },
+                        ]
+                    },
+                        {
+                            "type": "vStack",
+                            "spacing": 4,
+                            "padding": [8, 0, 0, 0],
+                            "alignment": "center",
+                            "views": [{
+                                "style": "subtitle",
+                                "value": "WIL",
+                                "alignment": "center",
+                                "padding": [-5],
+                            },
+                                {
+                                    "value": "{{data.wil|default: '0'}}",
+                                    "style": "subtitle",
+                                    "alignment": "center",
+                                },
+                                {
+                                    "style": "textitalic",
+                                    "value": "Scared",
+                                    "alignment": "center",
+                                    "padding": [4],
+                                    "frame": {
+                                        "maxWidth": 80,
+                                    },
+                                    "borderWidth": 2,
+                                    "borderColor": "#296857",
+                                    "cornerRadius": 8,
+                                    "bgColor": "#ededed"
+                                },
+                            ]
+                        },
+                    ],
+                },
+                {
+                    "type": "zStack",
+                    "frame": {
+                        "minWidth": 100,
+                        "maxWidth": 100,
+                        "minHeight": 60,
+                        "maxHeight": 110
+                    },
+                    "views": [{
+                        "type": "vStack",
+                        "spacing": 0,
+                        "views": [{
+                            "type": "spacer",
+                            "borderWidth": 2,
+                            "borderColor": "#296857",
+                            "cornerRadius": 8,
+                            "padding": [0, 8, 0, 0],
+                        },
+                            {
+                                "type": "spacer",
+                                "height": 8
+                            },
+                        ]
+                    },
+                        {
+                            "type": "vStack",
+                            "spacing": 4,
+                            "padding": [8, 0, 0, 0],
+                            "alignment": "center",
+                            "views": [{
+                                "style": "subtitle",
+                                "value": "CHA",
+                                "alignment": "center",
+                                "padding": [-5],
+                            },
+                                {
+                                    "value": "{{data.cha|default: '0'}}",
+                                    "style": "subtitle",
+                                    "alignment": "center",
+                                },
+                                {
+                                    "style": "textitalic",
+                                    "value": "**Disheartened**",
+                                    "alignment": "center",
+                                    "padding": [4],
+                                    "frame": {
+                                        "maxWidth": 80,
+                                    },
+                                    "borderWidth": 2,
+                                    "borderColor": "#296857",
+                                    "cornerRadius": 8,
+                                    "bgColor": "#ededed"
+                                },
+                            ]
+                        },
+                    ],
+                },
+            ]
+        },
+        {
+            "type": "hStack",
+            "padding": [-9,0],
+            "alignment": "top",
+            "spacing": 8,
+            "views": [{
+                "type": "zStack",
+                "alignment": "top",
+                "frame": {
+                    "minWidth": 100,
+                    "maxWidth": 100,
+                    "minHeight": 30,
+                    "maxHeight": 30
+                },
+                "views": [{
+                    "type": "checkbox",
+                    "attribute": "data.angry",
+                    "alignment": "top"
+                }]
+            },
+                {
+                    "type": "zStack",
+                    "alignment": "top",
+                    "frame": {
+                        "minWidth": 100,
+                        "maxWidth": 100,
+                        "minHeight": 30,
+                        "maxHeight": 30
+                    },
+                    "views": [{
+                        "type": "checkbox",
+                        "attribute": "data.scared",
+                        "alignment": "top"
+                    }]
+                },
+                {
+                    "type": "zStack",
+                    "alignment": "top",
+                    "frame": {
+                        "minWidth": 100,
+                        "maxWidth": 100,
+                        "minHeight": 30,
+                        "maxHeight": 30
+                    },
+                    "views": [{
+                        "type": "checkbox",
+                        "attribute": "data.disheartened",
+                        "alignment": "top"
+                    }]
+                }]
+        },
+        {
+            "type": "divider",
+        },
+        {
+            "id": "mainTabs",
+            "type": "tabs",
+            "custom": {
+                "buttonStyle": {
+                    "selected": "prominent"
+                }
+            },
+            "views": [{
+                "id": "general",
+                "title": "General",
+                "type": "partial",
+                "value": "hero-general",
+            },
+                {
+                    "id": "combat",
+                    "title": "Combat",
+                    "type": "partial",
+                    "value": "hero-combat",
+                },
+                {
+                    "id": "spells",
+                    "title": "Spells/Abilities",
+                    "type": "partial",
+                    "value": "hero-spells",
+                },
+                {
+                    "id": "items",
+                    "title": "Items",
+                    "type": "partial",
+                    "value": "hero-items",
+                },
+                {
+                    "id": "other",
+                    "title": "Other",
+                    "type": "partial",
+                    "value": "hero-other",
+                },
+            ]
+        },
+
+    ],
+    //computed attributes
+    "attributes": [
+        // GENERAL
+        {
+            "data.dmgbonusstr": "{% if data.str <= 12 %}N/A{% elif data.str >= 13 and data.str <= 16 %}+d4{% elif data.str >= 17 %}+d6{% endif %}"
+        },
+        {
+            "data.dmgbonusagl": "{% if data.agl <= 12 %}N/A{% elif data.agl >= 13 and data.agl <= 16 %}+d4{% elif data.agl >= 17 %}+d6{% endif %}"
+        },
+        {
+            "data.movementbase": "{% if data.agl <= 6 %}-4{% elif data.agl >= 7 and data.agl <= 9 %}-2{% elif data.agl >= 13 and data.agl <= 15 %}2{% elif data.agl >= 16 %}4{% else %}0{% endif %}"
+        },
+        {
+            "data.kinmovement": "{{kinmovement}}"
+        },
+        {
+            "data.movement": "#{{data.kinmovement}} + {{data.movementbase}}"
+        },
+        {
+          "data.backpackequippedweight": "{% if data.backpackequipped == true %}2{% else %}0{% endif %}"  
+        },
+        {
+            "data.carryweight": "#1/2*{{data.str}} + {{data.backpackequippedweight}}",
+        },
+        // ABILITIES
+        {
+            // custom spellbook organization
+            "data.spellbook": {
+                "attribute": "data.spells",
+                "transform": "spellbook"
+            },
+        },
+        // ITEMS
+        {
+            // total gold
+            "data.currency.total": "#({{data.currency.cp|default: 0}} / 100) + ({{data.currency.sp|default: 0}} / 10) + {{data.currency.gp|default: 0}}",
+            // equipped armor (body)
+            "activeArmorBody": {
+                "attribute": "data.items",
+                "filter": "equipped == true and (definition.data.type == 'Armor' and not definition.data.ishelmet == true)",
+                "transform": "first",
+            },
+            // equipped armor (body) - for calc of equipped items not adding weight
+            "activeArmorBodyList": {
+                "attribute": "data.items",
+                "filter": "equipped == true and (definition.data.type == 'Armor' and not definition.data.ishelmet == true)",
+            },
+            // equipped armor (helmet)
+            "activeArmorHelmet": {
+                "attribute": "data.items",
+                "filter": "equipped == true and (definition.data.type == 'Armor' and definition.data.ishelmet == true)",
+                "transform": "first",
+                // equipped armor (helmet) - for calc of equipped items not adding weight
+            },
+            "activeArmorHelmetList": {
+                "attribute": "data.items",
+                "filter": "equipped == true and (definition.data.type == 'Armor' and definition.data.ishelmet == true)",
+            },
+            // equipped weapons
+            "activeWeapons": {
+                "attribute": "data.items",
+                "filter": "equipped == true and (definition.data.type == 'Melee Weapon' or definition.data.type == 'Ranged Weapon')",
+            },
+        },
+        {
+            // items transform to sections
+            "data.items": {
+                "attribute": "data.items",
+                "transform": "items"
+            },
+            "data.itemsactive": {
+                "attribute": "data.items",
+                "filter": "equipped == false",
+                "transform": "items"
+            },
+            // final AC
+            "data.ac": "#{{activeArmorBody.definition.data.ac|default: 0}} + {{activeArmorHelmet.definition.data.ac|default: 0}}"
+        },
+        {
+            "data.activeweapons": {
+                "attribute": "activeWeapons",
+            }
+        },
+        {
+            "data.activearmorhelmetlist": {
+                "attribute": "activeArmorHelmetList",
+            }
+        },
+        {
+            "data.activearmorbodylist": {
+                "attribute": "activeArmorBodyList",
+            }
+        },
+        // CLEANUP
+        {
+            "activeWeapons": {},
+            "activeArmorBody": {},
+            "activeArmorHelmet": {},
+            "weaponActions": {},
+            // "data.spells": {},
+            // "data.items": {},
+            // "data.actions": {},
+            // "data.spellbook": {},
+        }],
+}

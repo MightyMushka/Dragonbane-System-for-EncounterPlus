@@ -1,0 +1,71 @@
+{
+  "views": [
+    {
+      "type": "vStack",
+      "alignment": "trailing",
+      "spacing": 6,
+      "views": [
+        {
+          "type": "field",
+          "title": "{{name}}",
+          "value": "AR: {{ac}}",
+          "style": "dmgstr",
+          "alignment": "center",
+          "height": 55,
+          "link": "{{reference}}",
+        },
+        {
+            "value": "Banes",
+            "alignment": "trailing",
+            "style": "textitalic"
+        },
+        {
+          "type": "hStack",
+          "alignment": "trailing",
+          "spacing": 0,
+          "views": [
+            {
+              "type": "vStack",
+              "spacing": 0,
+              "alignment": "trailing",
+              "views": [
+                {
+                  "value": "Awareness",
+                  "alignment": "trailing",
+                  "style": "body-bold",
+                  "height": 25,
+                },
+                {
+                  "value": "Ranged",
+                  "alignment": "trailing",
+                  "style": "body-bold",
+                  "height": 25,
+                }
+              ]
+            },
+                        {
+              "type": "vStack",
+              "spacing": 0,
+              "alignment": "trailing",
+              "width": 30,
+              "views": [
+                {
+                  "type": "checkbox",
+                  "attribute": "definition.data.awarenessbane",
+                  "alignment": "trailing",
+                  "height": 25,
+                },
+                {
+                  "type": "checkbox",
+                  "attribute": "definition.data.rangedbane",
+                  "alignment": "trailing",
+                  "height": 25,
+                }
+              ]
+            },
+          ]
+        }
+      ]
+    }
+  ]
+}

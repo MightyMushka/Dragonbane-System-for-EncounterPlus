@@ -1,0 +1,22 @@
+{
+  "views": [
+    {
+      "type": "field",
+      "title": "Nickname",
+      "value": "{{data.nickname|default: 'None'}}",
+      "style": "other",
+    },
+        {
+      "type": "field",
+      "title": "Weakness",
+      "value": "{{data.weakness|default: 'None'}}",
+      "style": "other",
+    },
+        {
+      "type": "field",
+      "title": "Appearance",
+      "value": "{{data.appearance|default: 'None'}}",
+      "style": "other",
+    },
+  ]
+}

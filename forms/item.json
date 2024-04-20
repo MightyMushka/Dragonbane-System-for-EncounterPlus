@@ -1,0 +1,154 @@
+{
+  "title": "Item",
+  "sections": [
+    {
+      "title": "Common.Effect",
+      "type": "group",
+      "fields": [
+        {
+          "type": "textArea",
+          "attribute": "data.effect"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "fields": [
+        {
+          "title": "Common.ItemType",
+          "type": "picker",
+          "attribute": "data.type",
+          "attributeType": "ItemType"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Item.GeneralProperties",
+      "fields": [
+        {
+          "title": "Item.Cost",
+          "type": "text",
+          "attribute": "data.cost"
+        },
+        {
+          "title": "Item.Weight",
+          "type": "number",
+          "placeholder": "1",
+          "attribute": "data.weight"
+        },
+        {
+          "title": "Item.Supply",
+          "type": "picker",
+          "attribute": "data.supply",
+          "attributeType": "Supply"
+        },
+        {
+          "title": "Item.Tiny",
+          "type": "toggle",
+          "attribute": "data.tiny"
+        }
+      ]
+    },
+    {
+      "title": "Item.ArmorProperties",
+      "type": "group",
+      "visibleIf": "{% if data.type == 'Armor' %}true{% endif %}",
+      "fields": [
+        {
+          "title": "Common.ArmorRating",
+          "type": "number",
+          "attribute": "data.ac"
+        },
+        {
+            "title": "Bane on Sneaking",
+            "type": "toggle",
+            "attribute": "data.sneakbane"
+        },
+        {
+            "title": "Bane on Evade",
+            "type": "toggle",
+            "attribute": "data.evadebane"
+        },
+        {
+            "title": "Bane on Acrobatics",
+            "type": "toggle",
+            "attribute": "data.acrobaticsbane"
+        },
+        {
+            "title": "Bane on Awareness",
+            "type": "toggle",
+            "attribute": "data.awarenessbane"
+        },
+        {
+            "title": "Bane on all ranged attacks",
+            "type": "toggle",
+            "attribute": "data.rangedbane"
+        },
+        {
+            "title": "Is a helm/helmet?",
+            "type": "toggle",
+            "attribute": "data.ishelmet"
+        },
+      ]
+    },
+    {
+      "title": "Item.WeaponProperties",
+      "visibleIf": "{% if data.type == 'Melee Weapon' or data.type == 'Ranged Weapon' %}true{% endif %}",
+      "type": "group",
+      "fields": [
+        {
+          "title": "Common.WeaponSkill",
+          "type": "picker",
+          "attribute": "data.weaponskill",
+          "attributeType": "WeaponSkill"
+        },
+        {
+          "title": "Item.Hands",
+          "type": "number",
+          "attribute": "data.hands"
+        },
+        {
+          "title": "Item.StrengthReq",
+          "type": "number",
+          "attribute": "data.strengthreq"
+        },
+        {
+          "title": "Item.Range",
+          "units": "m",
+          "type": "text",
+          "attribute": "data.range"
+        },
+        {
+          "title": "Item.Damage",
+          "type": "text",
+          "attribute": "data.damage"
+        },
+        {
+          "title": "Item.Durability",
+          "type": "number",
+          "attribute": "data.durability"
+        },
+        {
+          "title": "Item.Features",
+          "type": "multiPicker",
+          "attribute": "data.features",
+          "attributeType": "WeaponFeature"
+        }
+      ]
+    },
+    {
+      "title": "Item.OtherProperties",
+      "type": "group",
+      "visibleIf": "{% if data.type == 'container' %}true{% endif %}",
+      "fields": [
+        {
+          "title": "Item.ContainerCapacity",
+          "placeholder": "Common.Unlimited",
+          "type": "number",
+          "attribute": "data.capacity"
+        }
+      ]
+    }
+  ]
+}

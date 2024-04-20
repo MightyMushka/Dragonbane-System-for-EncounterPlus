@@ -1,0 +1,76 @@
+{
+  "views": [
+    {
+      "type": "vStack",
+      "alignment": "leading",
+      "spacing": 6,
+      "views": [
+        {
+          "type": "field",
+          "title": "{{name}}",
+          "value": "AR: {{ac}}",
+          "style": "dmgstr",
+          "alignment": "center",
+          "height": 55,
+          "link": "{{reference}}",
+        },
+        {
+          "value": "Banes",
+          "style": "textitalic"
+        },
+        {
+          "type": "hStack",
+          "alignment": "leading",
+          "spacing": 0,
+          "views": [
+            {
+              "type": "vStack",
+              "spacing": 0,
+              "width": 30,
+              "alignment": "leading",
+              "views": [
+                {
+                  "type": "checkbox",
+                  "attribute": "definition.data.sneakbane",
+                  "height": 25,
+                },
+                {
+                  "type": "checkbox",
+                  "attribute": "definition.data.evadebane",
+                  "height": 25,
+                },
+                {
+                  "type": "checkbox",
+                  "attribute": "definition.data.acrobaticsbane",
+                  "height": 25,
+                }
+              ]
+            },
+            {
+              "type": "vStack",
+              "spacing": 0,
+              "alignment": "top",
+              "views": [
+                {
+                  "type": "text",
+                  "value": "**Sneak**",
+                  "height": 25,
+                },
+                {
+                  "type": "text",
+                  "value": "**Evade**",
+                  "height": 25,
+                },
+                {
+                  "type": "text",
+                  "value": "**Acrobatics**",
+                  "height": 25,
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

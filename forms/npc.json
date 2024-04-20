@@ -1,0 +1,227 @@
+{
+  "title": "NPCs",
+  "sections": [
+    {
+      "type": "group",
+      "fields": [
+        {
+          "title": "Kin",
+          "type": "picker",
+          "attribute": "data.kin",
+          "attributeType": "Kin"
+        },
+        {
+          "title": "Profession",
+          "type": "picker",
+          "attribute": "data.profession",
+          "attributeType": "Profession"
+        },
+        {
+          "title": "Motivation",
+          "type": "text",
+          "attribute": "data.motivation",
+        },
+        {
+          "title": "Trait",
+          "type": "text",
+          "attribute": "data.trait",
+        },
+        {
+          "title": "NPC.IsBoss",
+          "type": "toggle",
+          "attribute": "data.boss"
+        }
+      ]
+    },
+    {
+      "title": "Basic Traits",
+      "fields": [
+        {
+          "title": "Common.Size",
+          "type": "picker",
+          "attribute": "data.size",
+          "attributeType": "Size"
+        },
+        {
+          "title": "Common.Movement",
+          "placeholder": "-",
+          "attribute": "data.movement",
+          "type": "number"
+        },
+        {
+          "title": "Common.Armor",
+          "placeholder": "-",
+          "attribute": "data.ac",
+          "type": "number"
+        },
+        {
+          "title": "Common.Health",
+          "placeholder": "-",
+          "attribute": "data.hpMaximum",
+          "type": "number"
+        },
+                {
+          "title": "Current WP",
+          "placeholder": "-",
+          "attribute": "data.wpCurrent",
+          "type": "number"
+        },
+        {
+          "title": "Common.Willpower",
+          "placeholder": "-",
+          "attribute": "data.wpMaximum",
+          "type": "number"
+        },
+        {
+          "title": "Common.DamageBonus",
+          "placeholder": "-",
+          "attribute": "data.damagebonus",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "NPC Details",
+      "fields": [
+        {
+          "title": "General Skills",         
+          "attribute": "data.generalskills",
+          "type": "textArea"
+        },
+                {
+          "title": "Weapon Skills",        
+          "attribute": "data.weaponskills",
+          "type": "textArea"
+        } 
+      ]
+    },
+    {
+      "title": "Armor",
+      "type": "list",
+      "attribute": "data.armor",
+      "attributeType": "Item",
+            "custom": {
+        "map": {
+          "ac": "data.ac"
+        }
+      },
+      "form": {
+        "title": "Armor",
+        "sections": [
+          {
+            "type": "group",
+            "fields": [
+              {
+                "placeholder": "Common.Name",
+                "attribute": "name"
+              },
+              {
+                "placeholder": "Common.Description",
+                "type": "textArea",
+                "attribute": "descr"
+              }
+            ]
+          },
+          {
+            "title": "Common.Reference",
+            "type": "group",
+            "fields": [
+              {
+                "title": "Common.Reference",
+                "type": "reference",
+                "attribute": "reference",
+                "attributeType": "Item"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Weapons",
+      "type": "list",
+      "attribute": "data.weapons",
+      "attributeType": "Item",
+                  "custom": {
+        "map": {
+          "weaponskill": "data.weaponskill",
+          "range": "data.range",
+          "damage": "data.damage"
+        }
+      },
+      "form": {
+        "title": "Character.Item",
+        "sections": [
+          {
+            "type": "group",
+            "fields": [
+              {
+                "placeholder": "Common.Name",
+                "attribute": "name"
+              },
+              {
+                "placeholder": "Common.Description",
+                "type": "textArea",
+                "attribute": "descr"
+              }
+            ]
+          },
+          {
+            "title": "Common.Reference",
+            "type": "group",
+            "fields": [
+              {
+                "title": "Common.Reference",
+                "type": "reference",
+                "attribute": "reference",
+                "attributeType": "Item"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Spells",
+      "type": "list",
+      "attribute": "data.spells",
+      "attributeType": "Spell",
+      "custom": {
+        "map": {
+          "SpellSchool": "data.spellschool"
+        }
+      },
+      "form": {
+        "title": "Character.Spell",
+        "sections": [
+          {
+            "type": "group",
+            "fields": [
+              {
+                "placeholder": "Common.Name",
+                "attribute": "name"
+              },
+              {
+                "placeholder": "Common.Description",
+                "type": "textArea",
+                "attribute": "descr"
+              }
+            ]
+          },
+          {
+            "title": "Common.Reference",
+            "type": "group",
+            "fields": [
+              {
+                "title": "Common.Reference",
+                "type": "reference",
+                "attribute": "reference",
+                "attributeType": "Spell"
+              }
+            ]
+          }
+        ]
+      }
+    },
+  ]
+}

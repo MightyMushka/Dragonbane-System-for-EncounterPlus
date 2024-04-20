@@ -1,0 +1,31 @@
+{
+    "views": [{
+        "type": "hStack",
+        "alignment": "center",
+        "spacing": 6,
+        "views": [{
+            "type": "vStack",
+            "spacing": 1,
+            "link": "{{reference}}",
+            "views": [{
+                "value": "**{{name}}**",
+                "style": "cards",
+                "type": "text"
+            },
+]
+        },
+            {
+                "type": "button",
+                "title": "{{wpcost}} WP",
+                "alignment": "center",
+                "width": 45,
+                "height": 24,
+                "padding":[8],
+                "action": {
+                    "set": {
+                        "data.wpCurrent": "#{{data.wpCurrent}} - {{wpcost|default: 0}}"
+                    }
+                }
+            }]
+    }]
+}
